@@ -1,7 +1,7 @@
 <h4 id="home"><a href="#home">2.2.1 Home page<br>
 </a></h4>
 <p>
-	 The Home page welcomes you to your organization and offers you several options for different actions you can take. You can also use the menu on the left-hand side of the screen to view the different apps that are currently installed for your organization. This organization currently has the Token Manager, Voting, Finance, and Agent apps installed, plus default Permissions, App Center, and Settings "System" apps.
+	 The Home page welcomes you to your organization and offers you several options for different actions you can take. You can also use the menu on the left-hand side of the screen to view the different apps that are currently installed for your organization. This organization currently has the Token Manager, Voting, Finance, and Agent apps installed, plus default Permissions, App Center, and Organization "System" apps.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d866ff52c7d3a7e9ae1748f/file-tI8SSNINgn.png">
@@ -9,16 +9,15 @@
 <h4 id="tokens"><a href="#tokens">2.2.2 Tokens app<br>
 </a></h4>
 <p>
-	 Use the Tokens app to mint new tokens and assign them to yourself or other entities. Tokens minted by the Tokens app confer voting abilities to holders of the tokens such that one token equals one vote. Tokens in a Company organization are transferable, and there is no inherent limit to the number of tokens that can be minted and held by any tokenholder.
+	 Use the Tokens app to mint new tokens and assign them to yourself or other entities. Tokens minted by the Tokens app confer voting abilities to holders of the tokens such that one token equals one vote. Tokens in a Membership organization are non-transferable, and each tokenholder can only hold a maximum of one token minted by the organization at a time (so one member = one vote).
 </p>
 <p>
 	 There are many reasons an organization might mint tokens for entities. Here are a few examples:
 </p>
 <ul>
-	<li>The organization commits to giving its workers a stake in the company e.g. half of the company tokens are held by workers and the other half by investors </li>
-	<li>The organization mints tokens to entities proportional to the amount of funds they have invested in the company</li>
-	<li>The organization mints a specific amount of tokens for an entity in exchange for a specific good or service </li>
-	<li>The organization mints a fixed amount of tokens per month and distributes them proportionally to everyone who has contributed value to the organization that month</li>
+	<li>The organization is a cooperative that mints a token for each worker in the cooperative</li>
+	<li>The organization is a club that mints a token for each member of the club</li>
+	<li>The organization is a committee that mints a token for each member of the committee</li>
 </ul>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d8670092c7d3a7e9ae17490/file-puq4uLJNdR.png">You can mint new tokens by following these steps:
@@ -32,21 +31,21 @@
 </p>
 <h4>2.2.2.2 Create vote to assign tokens</h4>
 <p>
-	 Even though you are the only tokenholder at this point, the Company organization still requires a tokenholder vote for every action. Click “Create transaction” to create the transaction that creates a new vote to assign the new token you want to mint. Sign the transaction in your Ethereum provider, wait for a confirmation, then move on to the next step.
+	 Even though you are the only tokenholder at this point, the Membership organization still requires a tokenholder vote for every action. Click “Create transaction” to create the transaction that creates a new vote to assign the new token you want to mint. Sign the transaction in your Ethereum provider, wait for a confirmation, then move on to the next step.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d8670252c7d3a7e9ae17491/file-zHVRJRsCxh.png">
 </p>
 <h4>2.2.2.3 Vote "Yes" to approve the “Assign Tokens” vote</h4>
 <p>
-	Go to the Voting app, click on the "Mint tokens" proposal you just created, and vote "Yes" to approve minting and assigning the token.
+	 Go to the Voting app, click on the "Mint tokens" proposal you just created, and vote "Yes" to approve minting and assigning the token.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86704404286364bc8f65a8/file-3HqY7hjgVT.png"><img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86704e04286364bc8f65a9/file-Q0j84wMspY.png"><img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86705504286364bc8f65aa/file-XXqa4bCrdP.png"><img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86705d04286364bc8f65ab/file-ufbjRLw9WD.png">
 </p>
 <h4>2.2.2.4 Check out the newest member of your organization</h4>
 <p>
-	 Your organization just went from one to two members. A good start to a new Company organization!
+	 Your organization just went from one to two members. A good start to a new Membership organization!
 </p>
 <p>
 	<em>Note: If a vote is cast that causes the Minimum Approval % to be equal to or greater than the Support required (e.g. 60% Support with 60% Minimum Approval) then the vote will execute automatically. If the Minimum Approval % is less than the Support required (e.g. 60% Support with 40% Minimum Approval) then additional "no" votes could still stop the vote from being passed, so the vote will remain open until either the duration is reached or the Minimum Approval % is equal to or greater than the Support requirement. After the vote ends, the result must be enacted manually by one of the tokenholders in the organization.<br>
@@ -58,14 +57,14 @@
 <h4 id="voting"><a href="#voting">2.2.3 Voting app<br>
 </a></h4>
 <p>
-	 The Voting app makes it easy for you to poll your fellow tokenholders about their position on an infinite range of topics. Votes initiated by other Aragon apps also show up in the Voting app. For example, assigning tokens using the Token Manager or moving funds from the Finance app are each actions that require a vote by tokenholders in a Company organization.Follow these steps to create a new vote and poll your community about a topic you care about:
+	 The Voting app makes it easy for you to poll your fellow tokenholders about their position on an infinite range of topics. Votes initiated by other Aragon apps also show up in the Voting app. For example, assigning tokens using the Token Manager or moving funds from the Finance app are each actions that require a vote by tokenholders in a Membership organization. Follow these steps to create a new vote and poll your organization about a topic you care about:
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86707404286364bc8f65ac/file-NDvm6NpSPk.png">
 </p>
 <h4>2.2.3.1 Click “New Vote”</h4>
 <p>
-	 Fill out the question you want to poll your community about and click “Create new vote”.
+	 Fill out the question you want to poll your organization about and click “Create new vote”.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d86707f04286364bc8f65ad/file-IhKe023Zf9.png">
@@ -86,7 +85,7 @@
 </p>
 <h4>2.2.3.4 Other tokenholders cast their vote</h4>
 <p>
-	 In this case, the other tokenholder in the organization supports the proposal. They sent a follow-up email saying that they will vote "Yes".
+	 In this case, the other tokenholder in the organization supports the proposal and votes "Yes".
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d8670a62c7d3a7e9ae17494/file-2c4reim3Sf.png">
@@ -109,7 +108,7 @@
 <h4 id="finance"><a href="#finance">2.2.5 Finance app<br>
 </a></h4>
 <p>
-	 The Finance app is the app that provides tokenholders with access to the funds held by their organization. The Finance app shows the current balance in ETH and tokens as well as the transaction history of the organization. You can also use the Finance app to initiate a new transfer of funds.
+	 The Finance app is the app that provides tokenholders with access to the funds held by their organization. The Finance app shows the current balance in ETH and tokens as well as the transaction history of the organization. You can also use the Finance app to initiate a new transfer of funds. 
 	<em><br>
 	</em>
 </p>
@@ -141,7 +140,7 @@
 </p>
 <h4>2.2.5.3 Sign the transaction to create the New Transfer vote</h4>
 <p>
-	 As mentioned before, all actions in the Reputation organization require a vote by tokenholders. Click “Create transaction” then open your Ethereum provider to sign and send the transaction that creates the New Transfer vote.
+	 As mentioned before, all actions in the Membership organization require a vote by tokenholders. Click “Create transaction” then open your Ethereum provider to sign and send the transaction that creates the New Transfer vote.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5d8670f004286364bc8f65b1/file-xcZDgg8Vu9.png">
