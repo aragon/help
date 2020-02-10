@@ -1,0 +1,31 @@
+<h1>Aragon Court</h1>
+<p>
+	 Aragon Court is one of the core components of the 
+	<a href="https://aragon.org/network/" target="_blank">Aragon Network</a>. It is a dispute resolution protocol that handles subjective disputes that cannot be solved by smart contracts. This is achieved by having a set of jurors drafted for each dispute who will vote to guarantee a certain ruling.
+</p>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afa9104286364bc94e693/file-nGEAP7l6NI.jpg">
+</p>
+<h4 id="fundamentals"><a href="#fundamentals">Aragon Court fundamentals</a></h4>
+<p>
+	 Jurors sign up to get drafted into the court by activating ANJ tokens in Aragon Court's smart contract. The more tokens a juror has activated, the higher the probability of getting drafted. If you own 
+	<a href="https://wiki.aragon.org/network/aragon_network_token/" target="_blank">ANT</a>, you can easily exchange your ANT for ANJ at <a href="https://anj.aragon.org/" target="_blank">anj.aragon.org</a>. Otherwise, it is easy to acquire ANT on various exchanges like <a href="https://uniswap.io/" target="_blank">Uniswap</a>, <a href="https://dex.ag/ANT" target="_blank">DEX.AG</a>, or <a href="https://wiki.aragon.org/network/aragon_network_token/#trade-ant" target="_blank">other exchanges</a>. Follow <a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror" target="_blank">this guide</a> for further details.
+</p>
+<h4 id="majority"><a href="#majority">Majority rule</a></h4>
+<p>
+	 Unlike traditional courts, Aragon Court jurors are not asked to rule impartially on disputes but instead are asked to rule the way they expect the majority of jurors to rule. Aragon Court attempts to find what the subjective truth is (i.e. the most correct outcome of a dispute) with a 
+	<a href="https://en.wikipedia.org/wiki/Focal_point_(game_theory)" target="_blank">Schelling game</a>. Every time a juror is drafted for a dispute, a portion of their activated tokens is locked until the dispute is finalized. To incentivize consensus, jurors who don’t vote in favor of the consensus ruling have their locked tokens slashed. Jurors who vote in favor of the consensus ruling are rewarded with fees and tokens from any jurors who voted for a minority ruling.
+</p>
+<h4 id="proof-of-stake"><a href="#proof-of-stake">"Proof of stake"</a></h4>
+<p>
+	 The Aragon Court is a permissionless protocol where any participant can come and go without asking for anyone's authorization. Therefore the protocol must function with integrity even in the presence of malicious actors, who may pose as multiple jurors at once to "Sybil attack" the Court. The defense against these attacks begins with a simple staking system where juror impact is weighted by their active stake of Aragon Court's native token (ANJ).
+</p>
+<p>
+	 You may be thinking if a cartel gets a majority of ANJ, they'll have a majority weight and attack the system unopposed since they'll influence more than 50% of the decisions. However, Aragon Court uses multiple countermeasures including iterative appeals, commit and reveal voting, and locked withdrawal periods that are designed to dissuade a cartel from acquiring and misusing a majority of tokens. For more details about these mechanisms, check out the 
+	<a href="https://github.com/aragon/aragon-court/tree/master/docs/3-cryptoeconomic-considerations#aragon-court-as-a-proof-of-stake-system" target="_blank">technical documentation</a>.
+</p>
+<h4 id="juror-responsibilities"><a href="#juror-responsibilities">Juror responsibilities</a></h4>
+<p>
+	 Jurors are expected to perform certain duties and responsibilities, like reviewing evidence for a dispute and casting a vote. In order to help jurors properly execute their tasks, the Aragon Court Dashboard is available and provides all the tools they need. You can lean more about the Dashboard 
+	<a href="https://help.aragon.org/article/42-aragon-court-dashboard" target="_blank">here</a> and the details of dispute resolution <a href="https://help.aragon.org/article/43-disputes-life-cycle" target="_blank">here</a>.
+</p>

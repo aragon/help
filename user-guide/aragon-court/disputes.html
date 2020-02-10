@@ -1,0 +1,106 @@
+<h1>Dispute lifecycle</h1>
+<p>
+	The following guide aims to cover all the information you need to know as a juror to understand a dispute's lifecycle and its related tasks so you can have the best experience possible using the Aragon Court Dashboard. For an overview of the Dashboard and its modules, 
+	<a href="https://help.aragon.org/article/42-aragon-court-dashboard" target="_blank">click here</a>.
+</p>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afb522c7d3a7e9ae747a7/file-nNlT5Ggnby.png">The Court's main unit of time is called a <strong>term</strong>, which is currently set to <strong>eight hours</strong>. Every time period in Aragon Court is composed of terms (e.g. the vote commit duration lasts six terms, or two days). The current term and its remaining time is always displayed at the top of the dashboard.
+</p>
+<p>
+	As for disputes, they essentially observe the following lifecycle:
+</p>
+<ul>
+	<li><strong>Pre-draft state:</strong> Dispute creation and evidence submission.</li>
+	<li><strong>Adjudication rounds:</strong> Adjudication rounds are where jurors are drafted, review the dispute's evidence, then cast and reveal their votes. Disputes can be made up of multiple rounds if the first round's ruling is appealed.</li>
+	<li><strong>Final ruling:</strong> Dispute is settled.</li>
+</ul>
+<h4 id="dispute-creation"><a href="#dispute-creation">1. Dispute creation and evidence submission </a></h4>
+<p>
+	Disputes can be created by any entity subscribed to Aragon Court. Subscribers must currently pay a monthly subscription fee of 10 DAI.
+</p>
+<p>
+	Once a dispute is created, a time period of seven days is allowed to submit evidence that will later be reviewed by jurors. Evidence can be submitted in text format but HTTP and IPFS links are also accepted.
+</p>
+<p>
+	No action is required by jurors during this period.
+</p>
+<h4 id="drafting-jury"><a href="#drafting-jury">2. Drafting jury </a></h4>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd7104286364bc94e6ba/file-UgbX5KKyBo.png">After the evidence period is over, the first adjudication round is initiated and the <strong>Drafting jury</strong> period begins. The only task required during this period is to click on the <strong>Draft jury</strong> button in the dispute page. Anybody can execute this task and receive a DAI reward proportional to the number of jurors being drafted. The current draft reward amount is 0.18 DAI per juror.
+</p>
+<p>
+	Your chances of being drafted as a juror are directly proportional to your active amount of ANJ.
+</p>
+<p>
+	<strong>If you get selected as a juror</strong>, here are a few things you need to know:
+</p>
+<ul>
+	<li>You will receive an email notification containing information about the dispute and the next steps for you.</li>
+	<li>A portion of your active ANJ will be locked until the final ruling is confirmed. The main purpose of locking your active ANJ is to incentivize consensus decisions and honest behavior. The exact locked amount is equal to 30% of the minimum active balance for each time you get drafted. The minimum active balance is currently 10,000 ANJ, therefore the amount locked would be <strong>3,000 ANJ</strong>. You can learn more about the various scenarios possible for your locked tokens in the <a href="#voting-period">voting</a> and <a href="#ruling">ruling</a> sections.</li>
+	<li>It's possible to get drafted multiple times for the same dispute, if there are appeal rounds. In that case, the amount locked will be multiplied by the number of times you are being drafted. The voting power will also be proportional to this number. For example, a juror getting drafted twice for a dispute would have 6,000 ANJ locked and twice the normal voting weight.</li>
+	<li><strong>Neither your inactive ANJ nor the ANJ contained in your wallet will be locked.</strong></li>
+</ul>
+<h4 id="voting-period"><a href="#voting-period">3. Vote commit </a></h4>
+<p>
+	The voting period is critical for a drafted juror. What you must do within the allocated time is first to review the evidence, then to try anticipating what the voting decision of the  majority of jurors will be.
+</p>
+<p>
+	This seems counterintuitive at first. The Aragon Court is not exactly functioning like most legacy court systems in which every juror is asked for their unbiased opinion. If this would be the case, it would be unfair to penalize the ruling minority. Instead, jurors are incentivized to reach consensus and are rewarded or penalized accordingly.
+</p>
+<p>
+	Most importantly, it is essential to cast a vote since failing to do so will result in financial penalties for you. The vote commit period lasts 
+	<strong>two days</strong>. Here are the two steps required to cast a vote:
+</p>
+<p>
+	<strong>3.1. Select one of the three voting choices</strong>
+</p>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options.
+</p>
+<p>
+	<strong>3.2. One-time-use code</strong>
+</p>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd9b04286364bc94e6be/file-1pME0UtIow.png">To keep the votes secret until the end of the voting period, your vote will be combined with a randomly generated code. <strong>For security purposes, it's important that you save this code somewhere safe (such as inside a password manager).</strong>
+</p>
+<p>
+	<strong>Enable Court Auto-reveal service</strong> is a convenient option available if you want your vote to be revealed automatically during the next phase. Otherwise, a manual action will be necessary.
+</p>
+<p>
+	Click the 
+	<strong>Commit your vote</strong> button to send the transaction.
+</p>
+<h4 id="vote-reveal"><a href="#vote-reveal">4. Vote reveal</a></h4>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afdaf2c7d3a7e9ae747cf/file-u23dZc7FFx.png">After the voting period has ended, jurors will have <strong>two days</strong> to reveal their vote.
+</p>
+<p>
+	If you enabled the 
+	<strong>Auto-reveal service</strong>, there is no action required from you at this stage. Otherwise, simply click on the <strong>Reveal your vote</strong> button. Your one-time code shouldn't be necessary unless a problem occurred within the court, but if it is needed, you'll be prompted to retrieve it from the safe place you stored it and enter it into the juror app.
+</p>
+<h4 id="appeal"><a href="#appeal">4. Appeal and appeal confirmation</a></h4>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afdc32c7d3a7e9ae747d1/file-PkEb6MAJ2h.png">Now that the votes are revealed, you can see whether you voted with the majority or not. But before the ruling can be executed, an appeal period is started during which any user can lock DAI as collateral to propose an appeal. The amount to lock is currently 30 DAI per drafted juror. When the final ruling is confirmed, the user who appealed gets rewarded if the ruling has switched in their favor. If not, their entire collateral is slashed.
+</p>
+<p>
+	However, an appeal must be confirmed by a second user to officially start a new round. The amount to lock as collateral for this second user is 20 DAI per drafted juror.
+</p>
+<p>
+	If an appeal is confirmed, a new adjudication round is initiated and a new jury is drafted. With each new appeal, the number of jurors is multiplied by 
+	<strong>three</strong>. The appeal and appeal confirmation periods both last <strong>two days</strong>.
+</p>
+<h4 id="ruling"><a href="#ruling">5. Final ruling</a></h4>
+<p>
+	Once a ruling has been decided without any appeal, the final ruling is sent to the smart contract that triggered the dispute and all the adjudication rounds for the dispute can be settled taking into account the final ruling for rewards and penalties.
+</p>
+<p>
+	If, as a juror, you voted with the majority of the final ruling, congratulations! You just earned 10 DAI and a percentage of the slashed ANJ from jurors who voted against the majority.
+</p>
+<p>
+	If, however, you voted with the minority, your locked ANJ (currently 3,000 ANJ) is redistributed to the jurors who voted with the consensus.
+</p>
+<h4 id="final-appeal"><a href="#final-appeal">6. Final appeal round</a></h4>
+<p>
+	The maximum number of appeal rounds is not infinite, it is currently set to 
+	<strong>four</strong>. If an appeal is still confirmed after the maximum allowed is reached, a final round is initiated where all active jurors are drafted to cast a vote, in which case all jurors will be required to make up and safely store a secret passphase to vote. The auto-reveal service is currently disabled for the final appeal round, so jurors will have to manually reveal their vote during the final reveal period.
+</p>
