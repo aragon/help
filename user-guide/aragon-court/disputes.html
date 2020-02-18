@@ -52,7 +52,7 @@
 </p>
 <h5 id="three"><a href="#three">3.1 Select one of the three voting choices</a></h5>
 <p>
-	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options.
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options. Remember that you should vote the way that you think a majority of jurors will vote, since you will be penalized if your vote is in the minority.
 </p>
 <h5 id="onetime"><a href="#onetime">3.2 One-time-use code</a></h5>
 <p>
@@ -81,7 +81,12 @@
 	 Step 2. Fill out the form fields with the following information:
 </p>
 <ul>
-	<li>&nbsp;_voteId: enter the <strong>dispute #</strong> that the juror is leaking their code for. The dispute # can be found in the juror dashboard.</li>
+	<li>&nbsp;_voteId: enter the <strong>vote ID</strong> that the juror is leaking their code for.
+	<ul>
+		<li>To get the vote ID, go to the Aragon Court subgraph <a href="https://thegraph.com/explorer/subgraph/aragon/aragon-court?query=Disputes%20and%20rounds%20with%20votes" target="_blank">"Disputes and rounds with votes"</a> section, enter the Dispute # in place of "0" where it says <strong>{id_in: [0]}</strong>, then press Ctrl+Enter on your keyboard to execute the query. On the right side of the query box <strong></strong>it will say <strong>"vote": "id": "0".</strong> In this case <strong>0</strong> is the vote ID. Note that the vote ID will be different for any dispute other than Dispute #0.<strong><br>
+		</strong></li>
+	</ul>
+	</li>
 	<li>_voter: the <strong>Ethereum address</strong> of the cheating juror</li>
 	<li>_outcome: the outcome the cheating juror submitted. It can be a <strong>2</strong> (Refuse to rule), a <strong>3</strong> (Against), or a <strong>4</strong> (In favor). </li>
 	<li>_salt: the <strong>salt</strong> the cheating juror used to commit the vote
