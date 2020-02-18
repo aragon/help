@@ -1,15 +1,15 @@
-ANJ (Aragon Network Juror) is the native token of Aragon Court, which jurors need to activate in the Court to be selected and earn dispute fees. The use of ANJ helps align the incentives of jurors with the long-term health of the Court, ensuring the Court's integrity. The following tutorial will guide you through the steps necessary to get ANJ in order to become an 
+<p>
+	 ANJ (Aragon Network Juror) is the native token of Aragon Court, which jurors need to activate in the Court to be selected and earn dispute fees. The use of ANJ helps align the incentives of jurors with the long-term health of the Court, ensuring the Court's integrity. The following tutorial will guide you through the steps necessary to get ANJ in order to become an 
 	<a href="https://help.aragon.org/article/41-aragon-court" target="_blank">Aragon Court</a> juror.
-<p>
-<h4 id="ant"><a href="#ant">1. Check the ANJ conversion rate</a></h4>
 </p>
+<h4 id="ant"><a href="#ant">1. Check the ANJ conversion rate</a></h4>
 <p>
-Currently, jurors must hold and activate at least 10,000 ANJ to be eligible for drafting and earning subscription fees. Visit 
+	 Currently, jurors must hold and activate at least 10,000 ANJ to be eligible for drafting and earning subscription fees. Visit 
 	<a href="https://anj.aragon.org/" target="_blank">anj.aragon.org</a> to check the current ANJ conversion rate for the token you want to use to purchase ANJ. The conversion module on <a href="https://anj.aragon.org/" target="_blank">anj.aragon.org</a> currently supports buying ANJ using ANT, DAI, ETH, and USDC.
 </p>
 <h4 id="ant"><a href="#ant">2. Get one of the supported tokens to buy ANJ</a></h4>
 <p>
-You can purchase one of tokens supported by the ANJ conversion module (ANT, DAI, ETH, or USDC) on various exchanges such as 
+	 You can purchase one of tokens supported by the ANJ conversion module (ANT, DAI, ETH, or USDC) on various exchanges such as 
 	<a href="https://uniswap.io" target="_blank">Uniswap</a>, <a href="https://dex.ag/ANT" target="_blank">DEX.AG</a>, or <a href="https://wiki.aragon.org/network/aragon_network_token/#trade-ant" target="_blank">other token exchanges</a>. If you already have enough of one of these tokens and you want to use the tokens to buy ANJ, you can skip this step.
 </p>
 <h4 id="ant"><a href="#ant">2. Convert your tokens into ANJ</a></h4>
@@ -17,10 +17,55 @@ You can purchase one of tokens supported by the ANJ conversion module (ANT, DAI,
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afee42c7d3a7e9ae747ed/file-4e3RfB0ty7.png">To convert your tokens to ANJ, either go to <a href="http://anj.aragon.org" target="_blank">anj.aragon.org</a><a href="https://anj.aragon.org"></a> or click on the <strong>Buy ANJ</strong> button on the <a href="https://help.aragon.org/article/42-aragon-court-dashboard" target="_blank">Aragon Court Dashboard</a>.
 </p>
 <p>
-	Then use the conversion module to convert your tokens into the desired amount of ANJ.
+	 Then use the conversion module to convert your tokens into the desired amount of ANJ.
 </p>
 <h4 id="bonding-curve"><a href="#bonding-curve">The ANJ bonding curve</a></h4>
 <p>
-On the backend, the ANJ conversion module uses a bonding curve to regulate the ANJ token supply. A bonding curve is a smart contract that defines a relationship between token price and token supply. In this case, the bonding curve is used to convert ANT into ANJ and back. The more ANT is sent to the bonding curve, the fewer new ANJ will be released back to the sender, and vice versa. You can find a technical explanation of bonding curves 
+	 On the backend, the ANJ conversion module uses a bonding curve to regulate the ANJ token supply. A bonding curve is a smart contract that defines a relationship between token price and token supply. In this case, the bonding curve is used to convert ANT into ANJ and back. The more ANT is sent to the bonding curve, the fewer new ANJ will be released back to the sender, and vice versa. You can find a technical explanation of bonding curves 
 	<a href="https://yos.io/2018/11/10/bonding-curves" target="_blank">here</a> and find the source code for the specific smart contract of the ANJ bonding curve <a href="https://github.com/AragonBlack/fundraising/blob/next/apps/batched-bancor-market-maker/contracts/BatchedBancorMarketMaker.sol" target="_blank">here</a>.
 </p>
+<p>
+	<strong>Selling ANJ back to the bonding curve<br>
+	</strong>
+</p>
+<p>
+	You have two options for selling ANJ: selling on the open market, or selling back to the bonding curve. The ANJ conversion module currently does not offer the ability to sell and convert ANJ back into ANT. Instead, you have to interact with the bonding curve contract directly.
+</p>
+<p>
+	Here are instructions for interacting directly with the bonding curve contract to convert ANJ back to ANT:
+</p>
+<p>
+	Step 1.&nbsp;Approve the bonding curve contract to access your ANJ
+</p>
+<ul>
+	<li>Visit the ANJ contract's <a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184#writeContract">Write Contract page</a> on Etherscan.</li>
+	<li>Use function #1 "approve"</li>
+	<li>Under "_spender (address)" enter <strong>0x5D9DbF55aF65498FaA84BDD4dDe37f7F3f8c7af1</strong> as the value</li>
+	<li>Under "_amount (uint256)" enter the amount of ANJ you want to sell, as measured in the smallest units of ANJ (0.000000000000000001 ANJ). For example, if you want to sell 10,000 ANJ then enter 10000000000000000000000.</li>
+	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, move on to the next step.</li>
+</ul>
+<p>
+	Step 2. Open a sell order
+</p>
+<ul>
+	<li>Visit the bonding curve contract's <a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract">Write Contract page</a> on Etherscan.</li>
+	<li>Use function #11 "openSellOrder"</li>
+	<li>Under "_collateral (address)" enter the ANT contract address <strong>0x960b236a07cf122663c4303350609a66a7b288c0</strong> as the value</li>
+	<li>Under "_amount (uint256)" enter the amount of ANJ you want to sell, as measured in the smallest  units of ANJ (0.000000000000000001 ANJ). For example, if you want to  sell 10,000 ANJ then enter 10000000000000000000000.</li>
+	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, move on to the next step.</li>
+</ul>
+<p>
+	Step 3. Claim your sell order
+</p>
+<ul>
+	<li>Visit the bonding curve contract's <a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract">Write Contract page</a> on Etherscan.</li>
+	<li>Use function #6 "claimSellOrder"</li>
+	<li>Under "_seller (address)" enter the Ethereum address you used to open your sell order</li>
+	<li>Under "_batchId (uint256)" enter your batch ID.
+	<ul>
+		<li>The batch ID is the same as the number of the Ethereum block your openSellOrder transaction was confirmed in. For example if your openSellOrder transaction was confirmed in block 9482296 then enter 9482296 as the batch ID. Your Ethereum wallet should provide you with a transaction ID for your openSellOrder transaction that you can use to look up your transaction in any Ethereum block explorer to find the block number the transaction was confirmed in.</li>
+	</ul>
+	</li>
+	<li>Under "_collateral (address)" enter the ANT contract address <strong>0x960b236a07cf122663c4303350609a66a7b288c0</strong> as the value</li>
+	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, you'll receive ANT at the current rate as set by the bonding curve.</li>
+</ul>
