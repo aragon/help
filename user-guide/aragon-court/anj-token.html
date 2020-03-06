@@ -21,51 +21,132 @@
 </p>
 <h4 id="bonding-curve"><a href="#bonding-curve">The ANJ bonding curve</a></h4>
 <p>
-	 On the backend, the ANJ conversion module uses a bonding curve to regulate the ANJ token supply. A bonding curve is a smart contract that defines a relationship between token price and token supply. In this case, the bonding curve is used to convert ANT into ANJ and back. The more ANT is sent to the bonding curve, the fewer new ANJ will be released back to the sender, and vice versa. You can find a technical explanation of bonding curves 
-	<a href="https://yos.io/2018/11/10/bonding-curves" target="_blank">here</a> and find the source code for the specific smart contract of the ANJ bonding curve <a href="https://github.com/AragonBlack/fundraising/blob/next/apps/batched-bancor-market-maker/contracts/BatchedBancorMarketMaker.sol" target="_blank">here</a>.
+	 The ANJ token supply is regulated by a 
+	<em>bonding curve</em>, an automated market maker smart contract that defines a relationship between token price and token supply. In this case, the bonding curve is used to convert ANT into ANJ and back at pre-defined rates. The more ANT is sent to the bonding curve, the fewer new ANJ will be released back to the sender, and vice versa. You can find a technical explanation of bonding curves <a href="https://yos.io/2018/11/10/bonding-curves" target="_blank">here</a> and find the source code for the specific smart contract of the ANJ bonding curve <a href="https://github.com/AragonBlack/fundraising/blob/next/apps/batched-bancor-market-maker/contracts/BatchedBancorMarketMaker.sol" target="_blank">here</a>. Read on for instructions about how to interact directly with the bonding curve contract to convert ANT to ANJ and ANJ back to ANT.
 </p>
+<h2>Converting ANT to ANJ</h2>
+<h3>Check bonding curve price</h3>
 <p>
-	<strong>Selling ANJ back to the bonding curve<br>
-	</strong>
-</p>
-<p>
-	You have two options for selling ANJ: selling on the open market, or selling back to the bonding curve. The ANJ conversion module currently does not offer the ability to sell and convert ANJ back into ANT. Instead, you have to interact with the bonding curve contract directly.
-</p>
-<p>
-	Here are instructions for interacting directly with the bonding curve contract to convert ANJ back to ANT:
-</p>
-<p>
-	Step 1.&nbsp;Approve the bonding curve contract to access your ANJ
+	On 
+	<a href="https://etherscan.io/address/0x274aac49b63f07bf6998964ad20020b18383a09d#readContract" target="_blank">this contract</a> you can use <code>calculatePurchaseReturn</code> or <code>calculateSaleReturn</code> (depending on your direction) with the following parameters:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a87104286364bc965a8e/file-Hxr0SB20l3.png">
 </p>
 <ul>
-	<li>Visit the ANJ contract's <a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184#writeContract">Write Contract page</a> on Etherscan.</li>
-	<li>Use function #1 "approve"</li>
-	<li>Under "_spender (address)" enter <strong>0x5D9DbF55aF65498FaA84BDD4dDe37f7F3f8c7af1</strong> as the value</li>
-	<li>Under "_amount (uint256)" enter the amount of ANJ you want to sell, as measured in the smallest units of ANJ (0.000000000000000001 ANJ). For example, if you want to sell 10,000 ANJ then enter 10000000000000000000000.</li>
-	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, move on to the next step.</li>
+	<li><code>_supply</code>: Here you need to provide the total supply of <code>ANJ</code>. You can get that total amount of ANJ tokens ever minted from its <a href="https://etherscan.io/token/0xcd62b1c403fa761baadfc74c525ce2b51780b184#readContract" target="_blank">Etherscan contract</a>, with getter <code>totalSupply</code>(#3), as seen in the image below:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8812c7d3a7e9ae8d0bb/file-qxHP41CRlt.png"></li>
 </ul>
+<ul>
+	<li><code>connectorBalance</code>: The balance of ANT in the bonding curve. You can get it from the <a href="https://etherscan.io/token/0x960b236A07cf122663c4303350609A66A7B288C0#readContract" target="_blank">Etherscan contract for ANT</a>, <code>balanceOf</code>(#12), with the address <code>0xec0dd1579551964703246becfbf199c27cb84485</code> as a parameter.</li>
+</ul>
+<ul>
+	<li><img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a88e2c7d3a7e9ae8d0bc/file-5mKJfY4iYm.png"><code>connectorWeight</code>: <code>250000</code> (see <a href="https://fundraising.aragon.black/components/bonding-curve#pricing-algorithm" target="_blank">Aragon Fundraising documentation</a> for more info on this)</li>
+</ul>
+<ul>
+	<li><code>depositAmount</code>: the amount you want to convert. Remember to adjust for 18 decimal precision e.g. 100 ANT = 100000000000000000000.</li>
+</ul>
+<h3>Approve market maker contract to withdraw ANT</h3>
 <p>
-	Step 2. Open a sell order
+	<strong>⚠ This is only needed if you are converting to <code>ANJ</code>.</strong>
+</p>
+<p>
+	You can do this on 
+	<a href="https://etherscan.io/address/0x960b236a07cf122663c4303350609a66a7b288c0#writeContract" target="_blank">Etherscan ANT page</a> using <code>approve</code> function (#2), and the address of the <a href="https://fundraising.aragon.black/overview-1/components-1#market-maker" target="_blank">market maker</a> contract,<code>0x5D9DbF55aF65498FaA84BDD4dDe37f7F3f8c7af1</code>, as <code>_spender</code>. <code>_value</code> should be the amount of ANT that you will use in the next step to convert to <code>ANJ</code>.
+</p>
+<h3>Open order</h3>
+<p>
+	Go to 
+	<a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract" target="_blank">Court Fundraising contract on Etherscan</a> and use <code>openBuyOrder</code> (#22) to exchange <code>ANT</code> to <code>ANJ</code>.
 </p>
 <ul>
-	<li>Visit the bonding curve contract's <a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract">Write Contract page</a> on Etherscan.</li>
-	<li>Use function #11 "openSellOrder"</li>
-	<li>Under "_collateral (address)" enter the ANT contract address <strong>0x960b236a07cf122663c4303350609a66a7b288c0</strong> as the value</li>
-	<li>Under "_amount (uint256)" enter the amount of ANJ you want to sell, as measured in the smallest  units of ANJ (0.000000000000000001 ANJ). For example, if you want to  sell 10,000 ANJ then enter 10000000000000000000000.</li>
-	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, move on to the next step.</li>
+	<li>Put a zero in first parameter, <code>openBuyOrder</code> ("payableAmount (ether)")!</li>
+	<li>The address of the collateral, <code>ANT</code>, is <code>0x960b236A07cf122663c4303350609A66A7B288C0</code>.</li>
+	<li>Parameter <code>_value</code> is the amount of <code>ANT</code> you are contributing to the curve. Remember to adjust for 18 decimal precision e.g. 100 ANT = 100000000000000000000. </li>
 </ul>
+<div>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8ac04286364bc965a92/file-At2HocJLon.png">Make sure to click the button to view your transaction on Etherscan.
+</div>
+<h3>Claim order</h3>
 <p>
-	Step 3. Claim your sell order
+	Still on that Etherscan Fundraising contract page, once your previous transaction has been mined, you can finally get your 
+	<code>ANJ</code> tokens calling <code>claimBuyOrder</code> (#10), where <code>_buyer</code> is your address and <code>_collateral</code> is again <code>ANT</code> address <code>0x960b236A07cf122663c4303350609A66A7B288C0</code>.
+</p>
+<p>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8c704286364bc965a96/file-E4XMOc82Ed.png">For the <code>_batchId</code>, use the block number of your previous transaction:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8d404286364bc965a99/file-zDQWSWAu8n.png">
+</p>
+<h2>Converting ANJ to ANT</h2>
+<h3>Check Bonding Curve price</h3>
+<p>
+	On 
+	<a href="https://etherscan.io/address/0x274aac49b63f07bf6998964ad20020b18383a09d#readContract" target="_blank">this contract</a> you can use <code>calculateSaleReturn</code> with the following parameters:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8e12c7d3a7e9ae8d0c6/file-leNUB8VUub.png">
 </p>
 <ul>
-	<li>Visit the bonding curve contract's <a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract">Write Contract page</a> on Etherscan.</li>
-	<li>Use function #6 "claimSellOrder"</li>
-	<li>Under "_seller (address)" enter the Ethereum address you used to open your sell order</li>
-	<li>Under "_batchId (uint256)" enter your batch ID.
-	<ul>
-		<li>The batch ID is the same as the number of the Ethereum block your openSellOrder transaction was confirmed in. For example if your openSellOrder transaction was confirmed in block 9482296 then enter 9482296 as the batch ID. Your Ethereum wallet should provide you with a transaction ID for your openSellOrder transaction that you can use to look up your transaction in any Ethereum block explorer to find the block number the transaction was confirmed in.</li>
-	</ul>
-	</li>
-	<li>Under "_collateral (address)" enter the ANT contract address <strong>0x960b236a07cf122663c4303350609a66a7b288c0</strong> as the value</li>
-	<li>Click "write", sign and broadcast the transaction, then wait for a confirmation. Once your transaction is confirmed, you'll receive ANT at the current rate as set by the bonding curve.</li>
+	<li><code>_supply</code>: Here you need to provide the total supply of <code>ANJ</code>. You can get that total amount of ANJ tokens ever minted from its <a href="https://etherscan.io/token/0xcd62b1c403fa761baadfc74c525ce2b51780b184#readContract" target="_blank">Etherscan contract</a>, with getter <code>totalSupply</code>(#3), as seen in the image below:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8812c7d3a7e9ae8d0bb/file-qxHP41CRlt.png"></li>
 </ul>
+<ul>
+	<li><code>connectorBalance</code>: The balance of ANT of the bonding curve. You can get it from the <a href="https://etherscan.io/token/0x960b236A07cf122663c4303350609A66A7B288C0#readContract" target="_blank">Etherscan contract for ANT</a>, <code>balanceOf</code>(#12), with the address <code>0xec0dd1579551964703246becfbf199c27cb84485</code> as a parameter.<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a88e2c7d3a7e9ae8d0bc/file-5mKJfY4iYm.png"></li>
+</ul>
+<ul>
+	<li><code>connectorWeight</code>: <code>250000</code> (see <a href="https://fundraising.aragon.black/components/bonding-curve#pricing-algorithm" target="_blank">Aragon Fundraising documentation</a> for more info on this)</li>
+	<li><code>sellAmount</code>: the amount you want to convert. Remember to adjust for 18 decimal precision e.g. 10,000 ANJ = 10000000000000000000000.</li>
+</ul>
+<h3>Approve market maker contract to withdraw&nbsp;ANJ
+<p>
+	You can do this on 
+	<a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184#writeContract" target="_blank">Etherscan ANJ page</a> using <code>approve</code> function (#2), and the address of the <a href="https://fundraising.aragon.black/overview-1/components-1#market-maker">market maker</a> contract,<code>0x5D9DbF55aF65498FaA84BDD4dDe37f7F3f8c7af1</code>, as <code>_spender</code>. <code>_value</code> should be the amount of ANJ that you will use in the next step to convert to ANT.
+</p>
+</h3>
+<h3></h3>
+<h3>Open order</h3>
+<p>
+	Go to 
+	<a href="https://etherscan.io/address/0x0b4d742d52ee0c4391439f80822b26fdf1ad6ee7#writeProxyContract" target="_blank">Court Fundraising contract on Etherscan</a> and use <code>openSellOrder</code> (#11) to exchange <code>ANJ</code> to <code>ANT</code>.
+</p>
+<ul>
+	<li>The address of the collateral, <code>ANT</code>, is <code>0x960b236A07cf122663c4303350609A66A7B288C0</code>.</li>
+	<li>Parameter <code>_amount</code> is the amount of <code>ANJ</code> you are converting. Remember to adjust for 18 decimal precision e.g. 10,000 ANJ = 10000000000000000000000.</li>
+</ul>
+<div>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a90904286364bc965a9d/file-XHPJvwek4s.png">Make sure to click the button to view your transaction on Etherscan.
+</div>
+<h3>Claim order</h3>
+<p>
+	Still on that Etherscan Fundraising contract page, once your previous transaction has been mined, you can finally get your 
+	<code>ANT</code> tokens calling <code>claimSellOrder</code> (#11), where <code>_seller</code> is your address and <code>_collateral</code> is again <code>ANT</code> address <code>0x960b236A07cf122663c4303350609A66A7B288C0</code>.<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a9122c7d3a7e9ae8d0c8/file-0cgN9b0hTT.png">
+</p>
+<p>
+	For the 
+	<code>_batchId</code>, use the block number of your previous transaction:<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a8d404286364bc965a99/file-zDQWSWAu8n.png">
+</p>
+<h1>Convert to ANJ/ANT on Uniswap</h1>
+<p>
+	Go to 
+	<a href="https://uniswap.exchange/swap" target="_blank">Uniswap</a> and convert obtained <code>ANJ</code> tokens to <code>ANT</code>, or vice versa. You can convert the ANJ tokens to any other token or <code>ETH</code>, but getting <code>ANT</code> / <code>ANJ</code>  back makes it easier to repeat the operation.<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a92904286364bc965aa1/file-LWN1QtMrXB.png">
+</p>
+<h1>Source code packages</h1>
+<p>
+	If you want to do this programatically, instead of using Etherscan and Uniswap frontend, these are the packages you need:
+</p>
+<ul>
+	<li>@ablack/fundraising-aragon-fundraising</li>
+</ul>
+<p>
+	Install dependencies, compile contracts and you have ABI files in 
+	<code>build/contracts</code> as usual in a truffle project.
+</p>
+<ul>
+	<li>Uniswap</li>
+</ul>
+<p>
+	Download the repo and install dependencies.
+</p>
+<pre>
+&lt;code&gt;git clone &lt;https://github.com/Uniswap/contracts-vyper&gt; cd contracts-vyper  pip3 install virtualenv virtualenv -p python3 env source env/bin/activate pip install -r requirements.txt
+</pre>
+<p>
+	Then to get the ABI you can use:
+</p>
+<pre>
+&lt;code&gt;vyper -f abi contracts/uniswap_exchange.vy
+</pre>
+<p>
+	Alternatively, you can use the Solidity version from 
+	<a href="https://github.com/PhABC/uniswap-solidity" target="_blank">this repo</a>.
+</p>
