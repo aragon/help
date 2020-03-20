@@ -1,6 +1,6 @@
 # help.aragon.org
 
-This repository contains documentation and files related to the [help.aragon.org](help.aragon.org) website.
+This repository contains documentation and files related to the [https://help.aragon.org](help.aragon.org) website.
 
 If you find any issues with the documentation, please create an issue in this repo detailing the problem and, if you have one, a recommended solution.
 
