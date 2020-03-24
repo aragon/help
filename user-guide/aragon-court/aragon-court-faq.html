@@ -2,7 +2,7 @@
 <ul>
 	<li>What is the current duration of the different stages of a dispute?
 	<p>
-		Currently the different stage lengths are:
+		 Currently the different stage lengths are:
 	</p>
 	<ul>
 		<li>Evidence submission: 7 days. It can be cut short if the Aragon Court subscriber decides to cut it short (commonly if both parties signal that they are done with evidence submission).</li>
@@ -17,7 +17,7 @@
 <ul>
 	<li>Which fees need to be paid to create a dispute?
 	<p>
-		The fees required to create a dispute are:
+		 The fees required to create a dispute are:
 	</p>
 	<ul>
 		<li>Juror fees: 10 DAI x 3 jurors in first round = 30 DAI</li>
@@ -25,16 +25,16 @@
 		<li>Settlement fees: 0.11 DAI x 3 jurors = 0.33 DAI. These are intended to cover transaction fees for settling penalties.</li>
 	</ul>
 	<p>
-		Total: 
+		 Total: 
 		<strong>30.87 DAI</strong>
 	</p>
 	</li>
 	<li>Do I need to put collateral to create a dispute?
 	<p>
-		Aragon Court doesn't require a collateral deposit in order to create a dispute. The Aragon Court subscriber can require a collateral deposit, and has absolute control over this setting: the amount, who pays for it, how is it redistributed when a verdict is ruled, etc.
+		 Aragon Court doesn't require a collateral deposit in order to create a dispute. The Aragon Court subscriber can require a collateral deposit, and has absolute control over this setting: the amount, who pays for it, how is it redistributed when a verdict is ruled, etc.
 	</p>
 	<p>
-		Aragon Court does require collateral to appeal disputes and confirm appeals (see next section).
+		 Aragon Court does require collateral to appeal disputes and confirm appeals (see next section).
 	</p>
 	</li>
 </ul>
@@ -42,7 +42,7 @@
 <ul>
 	<li>How much money is needed to appeal a dispute? And to confirm the appeal? What is it for?
 	<p>
-		To appeal a dispute or confirm it, the amount required is 
+		 To appeal a dispute or confirm it, the amount required is 
 		<code>(juror fees + draft fees + settlement fees) x collateral factor x number of jurors</code>.
 	</p>
 	<ul>
@@ -52,7 +52,7 @@
 		<li>collateral factor = 2 to appeal, 3 to confirm</li>
 	</ul>
 	<p>
-		So that means:
+		 So that means:
 	</p>
 	<ul>
 		<li>Appeal dispute: 20.58 DAI x number of jurors</li>
@@ -76,46 +76,46 @@
 	</tr>
 	<tr>
 		<td>
-			First to second round
+			 First to second round
 		</td>
 		<td>
-			9
+			 9
 		</td>
 		<td>
-			185.22
+			 185.22
 		</td>
 		<td>
-			277.83
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Second to third round
-			<br>
-		</td>
-		<td>
-			27
-		</td>
-		<td>
-			555.66
-		</td>
-		<td>
-			833.49
+			 277.83
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Third to fourth round
+			 Second to third round
 			<br>
 		</td>
 		<td>
-			81
+			 27
 		</td>
 		<td>
-			1666.98
+			 555.66
 		</td>
 		<td>
-			2500.47
+			 833.49
+		</td>
+	</tr>
+	<tr>
+		<td>
+			 Third to fourth round
+			<br>
+		</td>
+		<td>
+			 81
+		</td>
+		<td>
+			 1666.98
+		</td>
+		<td>
+			 2500.47
 		</td>
 	</tr>
 	</tbody>
@@ -126,12 +126,12 @@
 	</li>
 	<li>If I have ANJ tokens staked or activated, can I lose them if I appeal a dispute?
 	<p>
-		No, the only funds that are risk when appealing or confirming an appeal are the DAI tokens deposited as collateral (see previous question for more details).
+		 No, the only funds that are risk when appealing or confirming an appeal are the DAI tokens deposited as collateral (see previous question for more details).
 	</p>
 	</li>
 	<li>What happens to the collateral put up if the final ruling is neither the ruling proposed by the appealing party nor the confirming party?
 	<p>
-		A portion of the collateral is used to pay fees, and the rest is returned to the collateral's previous owner. The fees are used to pay the winning jurors and pay for the incentivized operations of drafting and settling penalties. The fees payed are, per juror:
+		 A portion of the collateral is used to pay fees, and the rest is returned to the collateral's previous owner. The fees are used to pay the winning jurors and pay for the incentivized operations of drafting and settling penalties. The fees payed are, per juror:
 	</p>
 	<ul>
 		<li>juror fees = 10 DAI</li>
@@ -144,43 +144,43 @@
 <ul>
 	<li>What happens if there is a tie?
 	<p>
-		In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Against &gt; In favor, if in a second round 1 juror refuses to vote, 4 vote against and 4 vote in favor, the final outcome (for that round) will be Against, the 4 jurors that chose it will be rewarded and the rest will be slashed.
+		 In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Against &gt; In favor, if in a second round 1 juror refuses to vote, 4 vote against and 4 vote in favor, the final outcome (for that round) will be Against, the 4 jurors that chose it will be rewarded and the rest will be slashed.
 	</p>
 	</li>
 	<li>Is majority needed to win a vote?
 	<p>
-		No, it's not a 
+		 No, it's not a 
 		<em>majority</em> winner but rather the <em>plurality</em> winner. The most voted option wins. So if for instance there are 9 jurors (round 2), 4 rule "In favor", 2 rule "Against" and 3 rule "Refuse to vote", the winning outcome would be "In favor", even though it's less than half of the total jurors.
 	</p>
 	</li>
 	<li>What does "Refuse to vote" mean? What happens if it's the most voted option?
 	<p>
-		This is an option jurors can chose if they think that there's not enough evidence to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
+		 This is an option jurors can chose if they think that there's not enough evidence to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
 	</p>
 	</li>
 	<li>Another juror tried to collude and leaked his secret password. Can I punish this juror for attempting to collude?<br>
 	<p>
-		Yes you can, and you should! There are instructions for what to do in this situation 
+		 Yes you can, and you should! There are instructions for what to do in this situation 
 		<a href="https://help.aragon.org/article/43-dispute-lifecycle#leak" target="_blank">here</a>.
 	</p>
 	</li>
 	<li>What's the penalty for leaked votes?
 	<p>
-		It's the same as for jurors on the losing side of a final ruling. When a cast vote is leaked it's overwritten to "leaked" instead of the original outcome chosen by the juror, so it can never be on the winning side, even if their original cast vote would have been on the winning side.
+		 It's the same as for jurors on the losing side of a final ruling. When a cast vote is leaked it's overwritten to "leaked" instead of the original outcome chosen by the juror, so it can never be on the winning side, even if their original cast vote would have been on the winning side.
 	</p>
 	</li>
 </ul>
 <h1>ANJ</h1>
 <ul>
 	<li>May it happen that when I sell my ANJ tokens I get a lower price than the buy price I initially got and therefore I lose money?<br>
-	After the Aragon Court launch on February 10, 2020 the price of ANJ is variable according to market demand and the price set by the 
+	 After the Aragon Court launch on February 10, 2020 the price of ANJ is variable according to market demand and the price set by the 
 	<a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror#bonding-curve" target="_blank">ANJ bonding curve</a>. At any given time it is possible that the price of ANJ will be lower or higher than the price at which you acquired the ANJ.</li>
 </ul>
 <h1>Governance</h1>
 <ul>
 	<li>Which parameters of the Court can be changed? How?
 	<p>
-		Almost all parameters, except for the term duration can be changed. In particular:
+		 Almost all parameters, except for the term duration, period duration, and Court start time can be changed. In particular:
 	</p>
 	<ul>
 		<li>Juror fees</li>
@@ -202,19 +202,19 @@
 		<li>Minimum amount of juror tokens that can be activated</li>
 	</ul>
 	<p>
-		Only the Aragon Network DAO can change them, through a vote. Currently the Aragon Network DAO is composed by 
+		 Only the Aragon Network DAO can change them, through a vote. Currently the Aragon Network DAO is composed by 
 		<a href="https://github.com/aragon/AGPs/pull/126/files" target="_blank">5 council members</a>. It is planned its <a href="https://blog.aragon.org/evolving-aragon-network-governance/" target="_blank">control to be transitioned to ANT holders</a>.
 	</p>
 	</li>
 	<li>Do parameter changes affect ongoing disputes?
 	<p>
-		No, a dispute gets its parameter when it's created and keeps them during the whole life-cycle. So if for instance while a dispute is being adjudicated in the first round the voting period is reduced from 2 days to 1, the dispute will still have a voting period of 2 days all the way through to the final ruling.
+		 No, a dispute gets its parameter when it's created and keeps them during the whole life-cycle. So if for instance while a dispute is being adjudicated in the first round the voting period is reduced from 2 days to 1, the dispute will still have a voting period of 2 days all the way through to the final ruling.
 	</p>
 	</li>
 </ul>
 <h1>Technical</h1>
 <ul>
 	<li>Where is the Court "hosted"?<br>
-	Aragon Court is a smart contract system deployed to the 
+	 Aragon Court is a smart contract system deployed to the 
 	<a href="https://ethereum.org" target="_blank">Ethereum</a> mainnet. The Court Dashboard at <a href="https://court.aragon.org" target="_blank">court.aragon.org</a> is hosted by <a href="https://aragon.one" target="_blank">Aragon One</a> in a Swiss data center.</li>
 </ul>
