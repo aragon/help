@@ -1,5 +1,5 @@
 <p>
-	The Aragon Court Dashboard is the central app where all dispute-related tools are available for jurors. It also contains detailed information about past and current disputes, including evidence, rulings, timeline, and much more. The following guide presents an overview of the various sections of the Dashboard.
+	 The Aragon Court Dashboard is the central app where all dispute-related tools are available for jurors. It also contains detailed information about past and current disputes, including evidence, rulings, timeline, and much more. The following guide presents an overview of the various sections of the Dashboard.
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afb522c7d3a7e9ae747a7/file-nNlT5Ggnby.png">
@@ -104,25 +104,23 @@
 	<strong>As a normal user:</strong>
 </p>
 <ul>
-	<li><strong>Maintenance action fees:</strong> Certain tasks (e.g. draft jury, execute ruling) reward the user with a small amount of DAI.</li>
+	<li><strong>Maintenance action fees:</strong> Certain tasks (e.g. draft jury) reward the user with a small amount of DAI.</li>
 	<li><strong>Appeal Fees: </strong> Anyone can earn a reward in DAI for successfully appealing a dispute (i.e. correctly predicting a dispute's final ruling). Click <a href="https://help.aragon.org/article/43-dispute-lifecycle#appeal" target="_blank">here</a> for further information about appeal fees.</li>
 </ul>
-<div>
+<p>
 	<strong>More information about subscription rewards</strong>
-</div>
-<div>
-	As  mentioned above, through subscription fees activated jurors can earn a  monthly reward, in DAI, proportional to their active ANJ, whether they  are drafted or not. However, there are a few relevant factors jurors  should consider about how these rewards are computed. Subscription  rewards can be claimed by jurors after each Court period. Note that  Court periods are not the same as Court terms. Each Court period last 90  Court terms, and with each term lasting 8 hours, this means each Court  period lasts exactly 30 days.
-</div>
-<div>
-	Since subscription rewards are  computed based on the active ANJ each juror has, we need to define a  checkpoint in the whole Court period to check these balances and assign a  portion of all the subscription fees to each juror. Since a juror's  balance can change during each period, to avoid gaming we are using the  randomness assigned to the first Court term of the following period,  i.e. a future event that cannot be known beforehand (see 
-	<a href="https://github.com/aragon/aragon-court/blob/master/contracts/subscriptions/CourtSubscriptions.sol#L813">L813</a>).  This effectively means that the longer jurors keep their ANJ activated,  the higher their chances to receive a portion of the subscription fees  being assigned among them.
-	<div>
-		For example, for the first  period of Aragon Court, the resulting random checkpoint was the Court  Term #84. This means if you had the minimum necessary ANJ activated in  Court Term #84, then you are eligible to claim rewards for the first  Court period.
-	</div>
-	<p>
-		 So, to increase your chances of receiving  subscription rewards after each Court period, you should keep your ANJ  activated as long as possible.
-	</p>
-</div>
+</p>
+<p>
+	 As mentioned above, through subscription fees activated jurors can earn a monthly reward, in DAI, proportional to their active ANJ, whether they are drafted or not. However, there are a few relevant factors jurors should consider about how these rewards are computed. Subscription rewards can be claimed by jurors after each Court period. Note that Court periods are not the same as Court terms. Each Court period last 90 Court terms, and with each term lasting 8 hours, this means each Court period lasts exactly 30 days.
+</p>
+<p>
+	 Since subscription rewards are computed based on the active ANJ each juror has, we need to define a checkpoint in the whole Court period to check these balances and assign a portion of all the subscription fees to each juror. Since a juror's balance can change during each period, to avoid gaming we are using the randomness assigned to the first Court term of the following period, i.e. a future event that cannot be known beforehand (see 
+	<a href="https://github.com/aragon/aragon-court/blob/master/contracts/subscriptions/CourtSubscriptions.sol#L813">L813</a>). This effectively means that the longer jurors keep their ANJ activated, the higher their chances to receive a portion of the subscription fees being assigned among them.
+  For example, for the first period of Aragon Court, the resulting random checkpoint was the Court Term #84. This means if you had the minimum necessary ANJ activated in Court Term #84, then you are eligible to claim rewards for the first Court period.
+</p>
+<p>
+		 So, to increase your chances of receiving subscription rewards after each Court period, you should keep your ANJ activated as long as possible.
+</p>
 <h4 id="disputes"><a href="#disputes">5. Disputes</a></h4>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afc1804286364bc94e6a7/file-rmQbdruNWE.png">Disputes are at the core of Aragon Court. A dedicated page can be accessed by clicking the <strong>Disputes</strong> menu item in the side panel where you will see a list of disputes related to your account as well as every other past and active dispute.
