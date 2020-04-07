@@ -41,7 +41,7 @@
 </ul>
 <h4 id="voting-period"><a href="#voting-period">3. Vote commit </a></h4>
 <p>
-	 The voting period is critical for a drafted juror. What you must do within the allocated time is first to review the evidence, then to try anticipating what the voting decision of the majority of jurors will be.
+	 The voting period is critical for a drafted juror. What you must do within the allocated time is first to review the evidence, then to try anticipating what the voting decision of the plurality of jurors will be.
 </p>
 <p>
 	 This seems counterintuitive at first. The Aragon Court is not exactly functioning like most legacy court systems in which every juror is asked for their unbiased opinion. If this would be the case, it would be unfair to penalize the ruling minority. Instead, jurors are incentivized to reach consensus and are rewarded or penalized accordingly.
@@ -58,7 +58,7 @@
 </p>
 <h5 id="three"><a href="#three">3.1 Select one of the three voting choices</a></h5>
 <p>
-	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can choose refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options. Remember that you should vote the way that you think a majority of jurors will vote, since you will be penalized if your vote is in the minority.
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can choose refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options. Remember that you should vote the way that you think a plurality of jurors will vote, since you will be penalized if your vote is in the minority.
 </p>
 <h5 id="onetime"><a href="#onetime">3.2 One-time-use code</a></h5>
 <p>
@@ -74,7 +74,7 @@
 <h5 id="leak"><a href="#leak">3.3 Leaking the secret one-time-use code</a></h5>
 <p>
 	 If you leak your one-time-use-code, either on accident or on purpose, you could be 
-	<strong>penalized</strong>. This will put you on the losing side of a dispute even if you cast your vote for the majority outcome, and your locked ANJ will be redistributed to the majority jurors after the final ruling. This mechanism is in place to dis-incentivize cheating/ collusion among jurors.
+	<strong>penalized</strong>. This will put you on the losing side of a dispute even if you cast your vote for the plurality outcome, and your locked ANJ will be redistributed to the plurality jurors after the final ruling. This mechanism is in place to dis-incentivize cheating/ collusion among jurors.
 </p>
 <p>
 	 If another juror leaks their one-time-use code then you can penalize them using the following steps (this will be added to the juror dashboard for ease of use in the near future).
@@ -117,7 +117,7 @@
 </p>
 <h4 id="appeal"><a href="#appeal">5. Appeal and appeal confirmation</a></h4>
 <p>
-	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afdc32c7d3a7e9ae747d1/file-PkEb6MAJ2h.png">Now that the votes are revealed, you can see whether you voted with the majority or not. But before the ruling can be executed, an appeal period is started during which any user can lock DAI as collateral to propose an appeal. The amount to lock is currently 30.87 DAI per drafted juror.
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afdc32c7d3a7e9ae747d1/file-PkEb6MAJ2h.png">Now that the votes are revealed, you can see whether you voted with the plurality or not. But before the ruling can be executed, an appeal period is started during which any user can lock DAI as collateral to propose an appeal. The amount to lock is currently 30.87 DAI per drafted juror.
 </p>
 <p>
 	 However, an appeal must be confirmed by a second user to officially start a new round. The amount to lock as collateral for this second user is 20.58 DAI per drafted juror.
@@ -130,17 +130,17 @@
 	 If an appeal is not confirmed, then the outcome proposed by the appealing party wins. For example, if the ruling of the previous round was "In favor" and the appealing party proposes an "Against" ruling, and no one confirms the appeal, then the final ruling will be "Against".
 </p>
 <p>
-	 When the final ruling is confirmed, if the ruling has switched in favor of the user who appealed (the "appealing party") then the collateral of the user who confirmed the appeal (the "confirming party") is redistributed to the appealing party. If the ruling is in favor of the confirming party, then the collateral of the appealing party is redistributed to the confirming party. And if the final ruling is in neither the appealing party nor the confirming party's favor, then both the appealing party and confirming party get their collateral back minus a fee that goes to the jurors who voted in the majority.
+	 When the final ruling is confirmed, if the ruling has switched in favor of the user who appealed (the "appealing party") then the collateral of the user who confirmed the appeal (the "confirming party") is redistributed to the appealing party. If the ruling is in favor of the confirming party, then the collateral of the appealing party is redistributed to the confirming party. And if the final ruling is in neither the appealing party nor the confirming party's favor, then both the appealing party and confirming party get their collateral back minus a fee that goes to the jurors who voted in the plurality.
 </p>
 <h4 id="ruling"><a href="#ruling">6. Final ruling</a></h4>
 <p>
 	 Once a ruling has been decided without any appeal, the final ruling is sent to the smart contract that triggered the dispute and all the adjudication rounds for the dispute can be settled taking into account the final ruling for rewards and penalties.
 </p>
 <p>
-	 If, as a juror, you voted with the majority of the final ruling, congratulations! You just earned 10 DAI and a percentage of the slashed ANJ from jurors who voted against the majority.
+	 If, as a juror, you voted with the plurality of jurors in the final ruling, congratulations! You just earned 10 DAI and a percentage of the slashed ANJ from jurors who voted in the minority.
 </p>
 <p>
-	 If, however, you voted with the minority, your locked ANJ is redistributed to the jurors who voted with the consensus.
+	 If, however, you voted with the minority, your locked ANJ is redistributed to the jurors who voted with the plurality in the final ruling.
 </p>
 <h4 id="final-appeal"><a href="#final-appeal">7. Final appeal round</a></h4>
 <p>
