@@ -1,0 +1,303 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #F5F6FA;
+}
+.principal-page body {
+  background: white;
+}
+.principal-page .navbar .navbar-inner {
+  background: transparent;
+}
+
+#docsSearch form#searchBar {
+  text-align: left;
+}
+#docsSearch form#searchBar .search-query {
+  width: calc(100% - 130px);
+}
+
+#docsSearch form#searchBar button {   
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0) 0px 1px 1px;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 10px 35px;
+  background: linear-gradient(130deg, rgb(0, 180, 230), rgb(0, 240, 224)) transparent;
+  border: solid 0 transparent;
+  border-radius: 3px;
+  outline: 0px;
+  display: grid;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: none;
+}
+
+#docsSearch form#searchBar button:hover, #docsSearch form#searchBar button:active {
+  background: linear-gradient(130deg, rgb(0, 180, 230), rgb(0, 240, 224)) transparent;
+  border: solid 0 transparent;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+#docsSearch #searchBar button .icon-search {
+  color: white;
+}
+
+#docsSearch {
+  background: #1b1b1b;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 3em;
+  padding: 130px 0 100px 0;
+  margin-top: -64px;
+  color: white;
+  background-image: url(https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/background.png);
+  background-size: cover;
+}
+
+#docsSearch h1 {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 576px;
+  margin: auto;
+  line-height: 1.41;
+  font-size: 48px;
+  font-weight: 100;
+}
+
+.most-pop-articles h2 {
+  text-align: left;
+}
+
+.category {
+  background: #F9FAFC;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
+  border-radius: 12px;
+  border: solid 0 transparent!important;
+}
+.category h3 {
+  padding-top: 146px;
+  font-size: 28px;
+  line-height: 43px;
+  color: #27282D;
+  margin: 0;
+  font-weight: 100;
+}
+
+
+#category-15.category:before{
+  content: '';
+  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%; 
+}
+
+#category-11.category:before{
+  content: '';
+  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/02.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%; 
+}
+
+#category-12.category:before{
+  content: '';
+  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/03.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%; 
+}
+
+#category-24.category:before{
+  content: '';
+  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/04.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%; 
+}
+
+article .title {
+  font-size: 38px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  color: #27282D;
+}
+
+article p, article li {
+  font-size: 16px!important;
+  line-height: 28px!important;
+  letter-spacing: 0.24px;
+  color: #000000;
+}
+
+
+.articleRatings {
+  background: #FFFFFF;
+  border: 1px solid #F4F6FA;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
+  border-radius: 4px;
+}
+
+.articleRatings-question {
+  font-size: 18px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  color: #27282D;
+}
+
+.articleFoot p, .articleFoot time {
+  font-family: 'HKGroteskRegular', helvetica, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.24px;
+  color: #838F9B;
+}
+
+
+#sbContact {
+  color: #838F9B;
+  border-bottom: 1px solid #838F9B;
+}
+
+article a {
+  color: #01BFE3;
+}
+
+#sidebar form .search-query {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.0726053);
+  border-radius: 4px;
+  border: solid white 0px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #999999;
+}
+
+#sidebar form .search-query button .icon-search {
+  color: #AFB8C2;
+}
+
+#sidebar h3 {
+  font-size: 14px;
+  line-height: 68px;
+  color: #27282D;
+}
+
+#sidebar .nav-list a, #sidebar .nav-list .active a {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.24px;
+  color: #00B2D3;
+}
+
+.articleList li {
+  margin: 1em 0;
+}
+
+.most-pop-articles h2 {
+  font-size: 38px;
+  line-height: 68px;
+  color: #27282D;
+  font-weight: 100;
+}
+
+.most-pop-articles.two-col .popArticles a {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.24px;
+  color: #01BFE3;
+}
+
+.most-pop-articles {
+  max-width: auto;
+  width: 100%;
+  margin: 0 1%;
+}
+
+.category-list .category .article-count {
+  margin: 0;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.24px;
+  color: #01BFE3!important;
+}
+
+footer {
+  margin-top: 80px;
+}
+
+#contact a {
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.brand {
+  display: flex!important;
+  width: 320px;
+  align-items: center;
+}
+.brand img {
+  height: 40px;
+  order: -1;
+  padding-right: 10px;
+}
+
+header ul.nav {
+  height: 62px;
+  display: flex!important;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .navbar .brand {
+    font-size: 17px;
+    height: 32px;
+    overflow: hidden;
+  }
+  .category-list .category {
+    margin-bottom: 30px!important;
+  }
+  
+  #docsSearch {
+    padding: 194px 0 100px 0;
+    margin-top: -132px;
+    background-image: url(https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/background-mobile.png);
+    background-position: center;
+  }
+
+  #docsSearch h1 {
+    font-size: 39px;
+  }
+  .navbar .btn-navbar {
+    padding: 0;
+    width: 17px;
+  }
+}
+
+h1,h2,h3 {
+  font-weight: 100;
+}
