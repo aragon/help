@@ -17,7 +17,7 @@ body {
   width: calc(100% - 130px);
 }
 
-#docsSearch form#searchBar button {   
+#docsSearch form#searchBar button {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0) 0px 1px 1px;
   line-height: 1.5;
@@ -52,7 +52,7 @@ body {
   padding: 130px 0 100px 0;
   margin-top: -64px;
   color: white;
-  background-image: url(https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/background.png);
+  background-image: url(https://raw.githubusercontent.com/aragon/help/master/theme/assets/background.png);
   background-size: cover;
 }
 
@@ -89,50 +89,50 @@ body {
 
 #category-15.category:before{
   content: '';
-  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/01.png');
+  background:url('https://raw.githubusercontent.com/aragon/help/master/theme/assets/01.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   height: 150px;
-  width: 100%; 
+  width: 100%;
 }
 
 #category-11.category:before{
   content: '';
-  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/02.png');
+  background:url('https://raw.githubusercontent.com/aragon/help/master/theme/assets/02.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   height: 150px;
-  width: 100%; 
+  width: 100%;
 }
 
 #category-12.category:before{
   content: '';
-  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/03.png');
+  background:url('https://raw.githubusercontent.com/aragon/help/master/theme/assets/03.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   height: 150px;
-  width: 100%; 
+  width: 100%;
 }
 
 #category-24.category:before{
   content: '';
-  background:url('https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/04.png');
+  background:url('https://raw.githubusercontent.com/aragon/help/master/theme/assets/04.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   height: 150px;
-  width: 100%; 
+  width: 100%;
 }
 
 article .title {
@@ -281,11 +281,11 @@ header ul.nav {
   .category-list .category {
     margin-bottom: 30px!important;
   }
-  
+
   #docsSearch {
     padding: 194px 0 100px 0;
     margin-top: -132px;
-    background-image: url(https://raw.githubusercontent.com/delfipolito/knowledge-base/master/assets/background-mobile.png);
+    background-image: url(https://raw.githubusercontent.com/aragon/help/master/theme/assets/background-mobile.png);
     background-position: center;
   }
 
