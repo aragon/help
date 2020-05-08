@@ -25,13 +25,13 @@
 	<em>bonding curve</em>. A bonding curve is an automated market maker smart contract that defines a relationship between token price and token supply.&nbsp;
 </p>
 <p>
-	ANT is the reserve token used to back the ANJ supply. The more ANT is deposited in the ANJ bonding curve, the more the total supply of ANJ increases; the more ANT is withdrawn from the bonding curve, the more the total supply of ANJ decreases.
+	 ANT is the reserve token used to back the ANJ supply. As more ANT is deposited in the ANJ bonding curve, the total supply of ANJ increases; as ANT is withdrawn from the bonding curve, the total supply of ANJ decreases.
 </p>
 <p>
 	 The bonding curve is used to convert ANT into ANJ and back at pre-defined rates. The way the ANJ bonding curve is set up, the more ANT is sent to the bonding curve, the fewer new ANJ will be released back to the sender; the more ANJ is sent to the bonding curve, the fewer ANT will be released back to the sender.
 </p>
 <p>
-	You can find a technical explanation of bonding curves 
+	 You can find a technical explanation of bonding curves 
 	<a href="https://yos.io/2018/11/10/bonding-curves" target="_blank">here</a> and find the source code for the specific smart contract used for the ANJ bonding curve <a href="https://github.com/AragonBlack/fundraising/blob/next/apps/batched-bancor-market-maker/contracts/BatchedBancorMarketMaker.sol" target="_blank">here</a>.
 </p>
 <p>
@@ -39,53 +39,61 @@
 	</strong>
 </p>
 <p>
-	You can convert ANT to/from ANJ directly through the ANJ bonding curve using the conversion interface at 
+	 You can convert ANT to/from ANJ directly through the ANJ bonding curve using the conversion interface at 
 	<a href="https://convert.aragon.org" target="_blank">convert.aragon.org</a>. Click the arrows in the middle of the screen to change the direction of your conversion. Enter the amount you want to convert, then click the "Convert" button at the bottom of the screen to confirm your transaction.
 </p>
 <p>
-	Converting ANT to ANJ:
+	 Converting ANT to ANJ:
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e86349904286364bc97b814/file-1U3e0ExVEb.png">
 </p>
 <p>
-	Converting ANJ to
+	Using the bonding curve to convert ANT to ANJ requires multiple transactions. If one of these transactions fails for some reason, you can follow the instructions in the 
+	<a href="https://help.aragon.org/article/45-various-topics-and-troubleshooting#convert" target="_blank">troubleshooting guide</a> to complete the transaction.
+</p>
+<p>
+	 Converting ANJ to
 </p>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e86348a2c7d3a7e9aea46d9/file-T9HgxklTqb.png">
 </p>
+<p>
+	Like the ANT to ANJ conversion, using the bonding curve to convert ANJ to ANT requires multiple  transactions. If one of these transactions fails for some reason, you  can follow the instructions in the 
+	<a href="https://help.aragon.org/article/45-various-topics-and-troubleshooting#sell" target="_blank">troubleshooting guide</a> to complete the transaction.
+</p>
 <h4 id="uniswap"><a href="#uniswap">Convert to ANJ/ANT on Uniswap</a></h4>
 <p>
-	Go to 
+	 Go to 
 	<a href="https://uniswap.exchange/swap" target="_blank">Uniswap</a> and convert obtained <code>ANJ</code> tokens to <code>ANT</code>, or vice versa. You can convert the ANJ tokens to any other token or <code>ETH</code>, but getting <code>ANT</code> / <code>ANJ</code> back makes it easier to repeat the operation.<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e62a92904286364bc965aa1/file-LWN1QtMrXB.png">
 </p>
 <h1>Source code packages</h1>
 <p>
-	If you want to do this programatically, instead of using Etherscan and Uniswap frontend, these are the packages you need:
+	 If you want to do this programatically, instead of using Etherscan and Uniswap frontend, these are the packages you need:
 </p>
 <ul>
 	<li>@ablack/fundraising-aragon-fundraising</li>
 </ul>
 <p>
-	Install dependencies, compile contracts and you have ABI files in 
+	 Install dependencies, compile contracts and you have ABI files in 
 	<code>build/contracts</code> as usual in a truffle project.
 </p>
 <ul>
 	<li>Uniswap</li>
 </ul>
 <p>
-	Download the repo and install dependencies.
+	 Download the repo and install dependencies.
 </p>
 <pre>
 &lt;code&gt;git clone &lt;https://github.com/Uniswap/contracts-vyper&gt; cd contracts-vyper  pip3 install virtualenv virtualenv -p python3 env source env/bin/activate pip install -r requirements.txt
 </pre>
 <p>
-	Then to get the ABI you can use:
+	 Then to get the ABI you can use:
 </p>
 <pre>
 &lt;code&gt;vyper -f abi contracts/uniswap_exchange.vy
 </pre>
 <p>
-	Alternatively, you can use the Solidity version from 
+	 Alternatively, you can use the Solidity version from 
 	<a href="https://github.com/PhABC/uniswap-solidity" target="_blank">this repo</a>.
 </p>

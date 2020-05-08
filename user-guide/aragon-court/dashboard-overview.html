@@ -22,6 +22,15 @@
 	<li><a href="https://fortmatic.com/" target="_blank">Fortmatic</a></li>
 	<li><a href="https://portis.io/" target="_blank">Portis</a></li>
 </ul>
+<div>
+ At the top of the dashboard you can also see a countdown timer for the current Court Term. Time in Aragon Court is measured in Court Terms, and each term lasts for 8 hours.
+</div>
+<div>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5eb5a4132c7d3a5ea54ac06a/file-ZfOlQCO9I9.png">Occasionally you may see a message on this countdown timer that says "Term needs updating". <a href="https://aragon.one" target="_blank">Aragon One</a>, the company that hosts the Aragon Court Dashboard instance at <a href="https://court.aragon.org" target="_blank">https://court.aragon.org</a>, runs an automated service that will automatically update the Court within a couple of hours of the term ending, so this message can be disregarded.
+</div>
+<div>
+	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5eb5aa082c7d3a5ea54ac0cf/file-nx3JHGgQ4w.png"><br>
+</div>
 <h4 id="balances"><a href="#balances">2. Balances</a></h4>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afb8204286364bc94e69f/file-LFyNx8NQFc.png">The first section you will see at the top of the Dashboard contains your ANJ balance information. This section is divided into three columns: <strong>My wallet</strong>, <strong>Inactive</strong> and <strong>Active</strong>.
@@ -98,7 +107,7 @@
 <ul>
 	<li><strong>Subscription fees:</strong> You earn a monthly reward, in DAI, proportional to your active ANJ, whether you are drafted or not. </li>
 	<li><strong>Dispute fees:</strong> If drafted, you earn a 10 DAI reward for ruling in favor of the dispute's final ruling. </li>
-	<li><strong>Ruling fees:</strong> The locked ANJ tokens of jurors who voted in the minority in a given dispute are redistributed to jurors who voted in the plurality according to the final ruling. Ruling fees are automatically transferred to your inactive wallet. Click <a href="https://help.aragon.org/article/43-dispute-lifecycle#ruling" target="_blank">here</a> for further information about ruling fees.</li>
+	<li><strong>Ruling fees:</strong> The locked ANJ tokens of jurors who voted in the minority in a given dispute are redistributed to jurors who voted in the <a href="https://help.aragon.org/article/41-aragon-court#plurality" target="_blank">plurality</a> according to the final ruling. Ruling fees are automatically transferred to your inactive wallet. Click <a href="https://help.aragon.org/article/43-dispute-lifecycle#ruling" target="_blank">here</a> for further information about ruling fees.</li>
 </ul>
 <p>
 	<strong>As a normal user:</strong>
@@ -115,11 +124,10 @@
 </p>
 <p>
 	 Since subscription rewards are computed based on the active ANJ each juror has, we need to define a checkpoint in the whole Court period to check these balances and assign a portion of all the subscription fees to each juror. Since a juror's balance can change during each period, to avoid gaming we are using the randomness assigned to the first Court term of the following period, i.e. a future event that cannot be known beforehand (see 
-	<a href="https://github.com/aragon/aragon-court/blob/master/contracts/subscriptions/CourtSubscriptions.sol#L813">L813</a>). This effectively means that the longer jurors keep their ANJ activated, the higher their chances to receive a portion of the subscription fees being assigned among them.
-  For example, for the first period of Aragon Court, the resulting random checkpoint was the Court Term #84. This means if you had the minimum necessary ANJ activated in Court Term #84, then you are eligible to claim rewards for the first Court period.
+	<a href="https://github.com/aragon/aragon-court/blob/master/contracts/subscriptions/CourtSubscriptions.sol#L813">L813</a>). This effectively means that the longer jurors keep their ANJ activated, the higher their chances to receive a portion of the subscription fees being assigned among them. For example, for the first period of Aragon Court, the resulting random checkpoint was the Court Term #84. This means if you had the minimum necessary ANJ activated in Court Term #84, then you are eligible to claim rewards for the first Court period.
 </p>
 <p>
-		 So, to increase your chances of receiving subscription rewards after each Court period, you should keep your ANJ activated as long as possible.
+	 So, to increase your chances of receiving subscription rewards after each Court period, you should keep your ANJ activated as long as possible.
 </p>
 <h4 id="disputes"><a href="#disputes">5. Disputes</a></h4>
 <p>

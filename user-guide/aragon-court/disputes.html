@@ -37,11 +37,12 @@
 	<li>You will receive an email notification containing information about the dispute and the next steps for you.</li>
 	<li>A portion of your active ANJ will be locked until the final ruling is confirmed. The main purpose of locking your active ANJ is to incentivize consensus decisions and honest behavior. The exact locked amount is equal to 30% of the minimum active balance for each time you get drafted. The minimum active balance is currently 10,000 ANJ, therefore the amount locked would be <strong>3,000 ANJ</strong>. You can learn more about the various scenarios possible for your locked tokens in the <a href="#voting-period">voting</a> and <a href="#ruling">ruling</a> sections.</li>
 	<li>It's possible to get drafted multiple times for the same dispute, if there are appeal rounds. In that case, the amount locked will be multiplied by the number of times you are being drafted. The voting power will also be proportional to this number. For example, a juror getting drafted twice for a dispute would have 6,000 ANJ locked and twice the normal voting weight.</li>
-	<li><strong>Neither your inactive ANJ nor the ANJ contained in your wallet will be locked.</strong></li>
+	<li><strong>Neither your inactive ANJ nor the ANJ contained in your wallet will be locked, only ANJ from your active.</strong></li>
 </ul>
 <h4 id="voting-period"><a href="#voting-period">3. Vote commit </a></h4>
 <p>
-	 The voting period is critical for a drafted juror. What you must do within the allocated time is first to review the evidence, then to try anticipating what the voting decision of the plurality of jurors will be.
+	 The voting period is critical for a drafted juror. What you must do within the allocated time is first to review the evidence, then to try anticipating what the voting decision of the 
+	<a href="https://help.aragon.org/article/41-aragon-court#plurality" target="_blank">plurality</a> of jurors will be.
 </p>
 <p>
 	 This seems counterintuitive at first. The Aragon Court is not exactly functioning like most legacy court systems in which every juror is asked for their unbiased opinion. If this would be the case, it would be unfair to penalize the ruling minority. Instead, jurors are incentivized to reach consensus and are rewarded or penalized accordingly.
@@ -53,19 +54,20 @@
 	<strong>Failing to cast a vote will result in your locked tokens getting slashed and redistributed to the winning jurors after the final ruling - so make sure to commit and reveal your vote in the allotted time periods.</strong>
 </p>
 <p>
-	The vote commit period lasts 
+	 The vote commit period lasts 
 	<strong>two days</strong>. Here are the steps required to cast a vote:
 </p>
 <h5 id="three"><a href="#three">3.1 Select one of the three voting choices</a></h5>
 <p>
-	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd8704286364bc94e6bd/file-B1IFIEqFcy.png">Three choices are available: voting in favor of the dispute description, voting against it, or refusing to vote. You can choose refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. In any case, a juror won't be penalized at this stage for selecting any of these options. Remember that you should vote the way that you think a plurality of jurors will vote, since you will be penalized if your vote is in the minority.
+	 Three choices are available: voting to 
+	<strong>Allow</strong> the action being disputed, voting to <strong>Block</strong> the action, or <strong>Refuse to vote</strong>. You can choose refuse to vote for many reasons, for example if you consider that the evidence was not conclusive enough or the description was incoherent. Remember that you should vote the way that you think a plurality of jurors will vote, since you will be penalized if your vote is in the minority.
 </p>
 <h5 id="onetime"><a href="#onetime">3.2 One-time-use code</a></h5>
 <p>
 	<img src="https://s3.amazonaws.com/helpscout.net/docs/assets/5c98a4fe0428633d2cf3fcf7/images/5e3afd9b04286364bc94e6be/file-1pME0UtIow.png">To keep the votes secret until the end of the voting period, your vote will be combined with a randomly generated code. <strong>For security purposes, it's important that you save this code somewhere safe (such as inside a password manager) and do not share it with anyone.</strong>
 </p>
 <p>
-	<strong>Enable Court Auto-reveal service</strong> is a convenient option available if you want your vote to be revealed automatically during the next phase. Otherwise, a manual action will be necessary.
+	<strong>Enable Court Auto-reveal service</strong> is a convenient option available if you want your vote to be revealed automatically during the next phase. If you select this option, you are relying on <a href="https://aragon.one" target="_blank">Aragon One</a>, the company that hosts the Aragon Court Dashboard at <a href="https://court.aragon.org" target="_blank">https://court.aragon.org</a>, to cast your reveal transaction on time. Otherwise, manual action will be necessary during the Reveal period.
 </p>
 <p>
 	 Click the 
@@ -127,7 +129,7 @@
 	<strong>three</strong>. The appeal and appeal confirmation periods both last <strong>two days</strong>.
 </p>
 <p>
-	 If an appeal is not confirmed, then the outcome proposed by the appealing party wins. For example, if the ruling of the previous round was "In favor" and the appealing party proposes an "Against" ruling, and no one confirms the appeal, then the final ruling will be "Against".
+	 If an appeal is not confirmed, then the outcome proposed by the appealing party wins. For example, if the ruling of the previous round was "Allow" and the appealing party proposes an "Block" ruling, and no one confirms the appeal, then the final ruling will be "Block".
 </p>
 <p>
 	 When the final ruling is confirmed, if the ruling has switched in favor of the user who appealed (the "appealing party") then the collateral of the user who confirmed the appeal (the "confirming party") is redistributed to the appealing party. If the ruling is in favor of the confirming party, then the collateral of the appealing party is redistributed to the confirming party. And if the final ruling is in neither the appealing party nor the confirming party's favor, then both the appealing party and confirming party get their collateral back minus a fee that goes to the jurors who voted in the plurality.
