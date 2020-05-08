@@ -5,7 +5,7 @@
 		 Currently the different stage lengths are:
 	</p>
 	<ul>
-		<li>Evidence submission: 7 days. It can be cut short if the Aragon Court subscriber decides to cut it short (commonly if both parties signal that they are done with evidence submission).</li>
+		<li>Argument submission: 7 days. It can be cut short if the Aragon Court subscriber decides to cut it short (commonly if both parties signal that they are done with evidence submission).</li>
 		<li>Vote commitment: 2 days</li>
 		<li>Vote reveal: 2 days</li>
 		<li>Appeal: 2 days</li>
@@ -31,10 +31,7 @@
 	</li>
 	<li>Do I need to put collateral to create a dispute?
 	<p>
-		 Aragon Court doesn't require a collateral deposit in order to create a dispute. The Aragon Court subscriber can require a collateral deposit, and has absolute control over this setting: the amount, who pays for it, how is it redistributed when a verdict is ruled, etc.
-	</p>
-	<p>
-		 Aragon Court does require collateral to appeal disputes and confirm appeals (see next section).
+		 Aragon Court doesn't require a collateral deposit in order to create a dispute. The Aragon Court subscriber can require a collateral deposit, and has absolute control over this setting: the amount, who pays for it, how is it redistributed when a verdict is ruled, etc. Aragon Court does require collateral to appeal disputes and confirm appeals (see next section).
 	</p>
 	</li>
 </ul>
@@ -90,7 +87,7 @@
 	</tr>
 	<tr>
 		<td>
-			 Second to third round
+			 Second to third round 
 			<br>
 		</td>
 		<td>
@@ -105,7 +102,7 @@
 	</tr>
 	<tr>
 		<td>
-			 Third to fourth round
+			 Third to fourth round 
 			<br>
 		</td>
 		<td>
@@ -142,20 +139,18 @@
 </ul>
 <h4 id="voting"><a href="#voting">Voting</a></h4>
 <ul>
-	<li>What happens if there is a tie?
-	<p>
-		 In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Against &gt; In favor, if in a second round 1 juror refuses to vote, 4 vote against and 4 vote in favor, the final outcome (for that round) will be Against, the 4 jurors that chose it will be rewarded and the rest will be slashed.
-	</p>
-	</li>
-	<li>Is majority needed to win a vote?
+	<li>Is a majority needed to win a vote?
 	<p>
 		 No, it's not a 
-		<em>majority</em> winner but rather the <em>plurality</em> winner. The most voted option wins. So if for instance there are 9 jurors (round 2), 4 rule "In favor", 2 rule "Against" and 3 rule "Refuse to vote", the winning outcome would be "In favor", even though it's less than half of the total jurors.
+		<em>majority</em> winner but rather the <a href="https://help.aragon.org/article/41-aragon-court#plurality" target="_blank">plurality</a> winner. The most voted ruling outcome wins. For example if there are 9 jurors (round 2) and 4 vote "Allow", 2 vote "Block" and 3 vote "Refuse to vote", the winning outcome of that round would be "Allow", because that outcome received the most votes out of the available options.
 	</p>
+	</li>
+	<li>What happens if there is a tie? 	  		 <br>
+	In case of a tie the highest priority option will be chosen. Refuse  to vote will always be the highest priority. On top of that,  organizations subscribed to the Court can set up their own priority.  Everything else works the same. So, for instance, given a priority of  Block &gt; Allow, if in the second round 1 juror refuses to vote, 4 vote  Block and 4 vote Allow, the final outcome (for that round) will be  Block. If there are no appeals in that round then Block is the final  ruling and the 4 jurors that voted Block will be rewarded and the rest  will be slashed. 	
 	</li>
 	<li>What does "Refuse to vote" mean? What happens if it's the most voted option?
 	<p>
-		 This is an option jurors can chose if they think that there's not enough evidence to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
+		 This is an option jurors can chose if they think that the arguments are not complete or coherent enough to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
 	</p>
 	</li>
 	<li>Another juror tried to collude and leaked his secret password. Can I punish this juror for attempting to collude?<br>
