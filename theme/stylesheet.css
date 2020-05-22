@@ -135,6 +135,18 @@ body {
   width: 100%;
 }
 
+#category-47.category:before {
+    content: '';
+    background: url(https://raw.githubusercontent.com/aragon/help/master/theme/assets/05.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+}
+
 article .title {
   font-size: 38px;
   line-height: 68px;
