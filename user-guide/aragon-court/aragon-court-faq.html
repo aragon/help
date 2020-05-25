@@ -12,6 +12,9 @@
 		<li>Appeal confirmation: 2 days</li>
 	</ul>
 	</li>
+	<li>What is the current configuration of Aragon Court's parameters?<br>
+	You can find Aragon Court's current parameters on the backend monitoring dashboard 
+	<a href="https://court-backend-app.eth.aragon.network/" target="_blank">here</a>.</li>
 </ul>
 <h4 id="disputes"><a href="#disputes">Disputes</a></h4>
 <ul>
@@ -43,10 +46,10 @@
 		<code>(juror fees + draft fees + settlement fees) x collateral factor x number of jurors</code>.
 	</p>
 	<ul>
-		<li>juror fees = 10 DAI</li>
-		<li>draft fees = 0.18 DAI</li>
-		<li>settlement fees = 0.11 DAI</li>
-		<li>collateral factor = 2 to appeal, 3 to confirm</li>
+		<li>Juror fees = 10 DAI</li>
+		<li>Draft fees = 0.18 DAI</li>
+		<li>Settlement fees = 0.11 DAI</li>
+		<li>Collateral factor = 2 to appeal, 3 to confirm</li>
 	</ul>
 	<p>
 		 So that means:
@@ -128,12 +131,12 @@
 	</li>
 	<li>What happens to the collateral put up if the final ruling is neither the ruling proposed by the appealing party nor the confirming party?
 	<p>
-		 A portion of the collateral is used to pay fees, and the rest is returned to the collateral's previous owner. The fees are used to pay the winning jurors and pay for the incentivized operations of drafting and settling penalties. The fees payed are, per juror:
+		 A portion of the collateral is used to pay fees, and the rest is returned to the collateral's previous owner. The fees are used to pay the winning jurors and pay for the incentivized operations of drafting and settling penalties. The fees paid are, per juror:
 	</p>
 	<ul>
-		<li>juror fees = 10 DAI</li>
-		<li>draft fees = 0.18 DAI</li>
-		<li>settlement fees = 0.11 DAI</li>
+		<li>Juror fees = 10 DAI</li>
+		<li>Draft fees = 0.18 DAI</li>
+		<li>Settlement fees = 0.11 DAI</li>
 	</ul>
 	</li>
 </ul>
@@ -146,7 +149,7 @@
 	</p>
 	</li>
 	<li>What happens if there is a tie? <br>
-	In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Block &gt; Allow, if in the second round 1 juror refuses to vote, 4 vote Block and 4 vote Allow, the final outcome (for that round) will be Block. If there are no appeals in that round then Block is the final ruling and the 4 jurors that voted Block will be rewarded and the rest will be slashed. 
+	 In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Block &gt; Allow, if in the second round 1 juror refuses to vote, 4 vote Block and 4 vote Allow, the final outcome (for that round) will be Block. If there are no appeals in that round then Block is the final ruling and the 4 jurors that voted Block will be rewarded and the rest will be slashed. 
 	</li>
 	<li>What does "Refuse to vote" mean? What happens if it's the most voted option?
 	<p>
