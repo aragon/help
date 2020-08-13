@@ -177,7 +177,7 @@
 	 The current total supply can be found on the ANJ contract page on block explorers such as 
 	<a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184" target="_blank">Etherscan</a>. Due to the <a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror#bonding-curve" target="_blank">bonding curve relationship</a> between ANT and ANJ, the max supply of ANJ is determined by the current total supply of ANT; based on the <a href="https://wiki.aragon.org/network/aragon_network_token/#initial-supply-breakdown" target="_blank">current total supply of ANT</a>, the max supply of ANJ that could possibly be minted by locking ANT in the bonding curve is approximately 350,868,849 ANJ.</li>
 	<li>Where can I find more information about ANJ?<br>
-	You can find more information about ANJ on the 
+	 You can find more information about ANJ on the 
 	<a href="https://wiki.aragon.org/network/aragon_network_juror/" target="_blank">Aragon Network Juror page</a> of the Aragon Wiki.</li>
 </ul>
 <h4 id="governance"><a href="#governance">Governance</a></h4>
@@ -187,27 +187,94 @@
 		 Almost all parameters, except for the term duration, period duration, and Court start time can be changed. In particular:
 	</p>
 	<ul>
-		<li>Juror fees</li>
-		<li>Draft fees</li>
-		<li>Settlement fees</li>
-		<li>Argument submission period</li>
-		<li>Commit period</li>
-		<li>Reveal period</li>
-		<li>Appeal period</li>
-		<li>Appeal confirm period</li>
-		<li>Penalty percentage of min active balance to be slashed for losing jurors</li>
-		<li>Final round fees reduction percentage</li>
-		<li>First round jurors number</li>
-		<li>Factor used to increase jurors number in each appeal</li>
-		<li>Number of regular rounds (before final round with all jurors is triggered)</li>
-		<li>Number of terms that a coherent juror in a final round is disallowed to withdraw (to discourage 51% attacks)</li>
-		<li>Multiple of dispute fees required to appeal a preliminary ruling</li>
-		<li>Multiple of dispute fees required to confirm appeal</li>
-		<li>Minimum amount of juror tokens that can be activated</li>
+		<li>Controller contract:<br>
+		<ul>
+			<li>Court parameters:<br>
+			<ul>
+				<li>Juror fees</li>
+				<li>Draft fees</li>
+				<li>Settlement fees</li>
+				<li>Argument submission period</li>
+				<li>Commit period</li>
+				<li>Reveal period</li>
+				<li>Appeal period</li>
+				<li>Appeal confirm period</li>
+				<li>Penalty percentage of min active balance to be slashed for losing jurors</li>
+				<li>Final round fees reduction percentage</li>
+				<li>First round jurors number</li>
+				<li>Factor used to increase jurors number in each appeal</li>
+				<li>Number of regular rounds (before final round with all jurors is triggered)</li>
+				<li>Number of terms that a coherent juror in a final round is disallowed to withdraw (to discourage 51% attacks)</li>
+				<li>Multiple of dispute fees required to appeal a preliminary ruling</li>
+				<li>Multiple of dispute fees required to confirm appeal</li>
+				<li>Minimum amount of juror tokens that can be activated</li>
+			</ul>
+			</li>
+			<li>Governor addresses:
+			<ul>
+				<li>Modules governor</li>
+				<li>Funds governor</li>
+				<li>Configuration governor</li>
+			</ul>
+			</li>
+			<li>Eject governor addresses i.e. remove without replacing:<br>
+			<ul>
+				<li>Eject Funds governor</li>
+				<li>Eject Modules governor</li>
+			</ul>
+			</li>
+			<li>Module addresses:
+			<ul>
+				<li>Dispute Manager</li>
+				<li>Jurors Registry</li>
+				<li>Voting</li>
+				<li>Treasury</li>
+				<li>Subscriptions</li>
+				<li>Set addresses for new modules</li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+		<li>Dispute Manager module:
+		<ul>
+			<li>Controller address (can only change by deploying a new Dispute Manager module)</li>
+			<li>Number of skipped disputes&nbsp;(can only change by deploying a new Dispute Manager module)</li>
+			<li>Maximum jurors per draft batch (relevant in case a draft is so large it requires multiple transactions or batches)</li>
+		</ul>
+		</li>
+		<li>Jurors Registry module:
+		<ul>
+			<li>Controller address (can only change by deploying a new Jurors Registry module)</li>
+			<li>Jurors token contract address (can only change by deploying a new Jurors Registry module)</li>
+			<li>Total active balance limit</li>
+		</ul>
+		</li>
+		<li>Voting module:
+		<ul>
+			<li>Controller address (can only change by deploying a new Voting module)</li>
+		</ul>
+		</li>
+		<li>Treasury module:
+		<ul>
+			<li>Controller address (can only change by deploying a new Treasury module)</li>
+		</ul>
+		</li>
+		<li>Subscriptions module
+		<ul>
+			<li>Controller address (can only change by deploying a new Subscriptions module)</li>
+			<li>Period duration (can only change by deploying a new Subscriptions module)</li>
+			<li>Subscriptions fee token</li>
+			<li>Subscriptions fee amount</li>
+			<li>Number of pre-payment periods</li>
+			<li>Number of resume pre-paid periods</li>
+			<li>Governor share %</li>
+			<li>Late payment penalty %</li>
+		</ul>
+		</li>
 	</ul>
 	<p>
-		 Only the Aragon Network DAO can change them, through a vote. Currently the Aragon Network DAO is composed by 
-		<a href="https://github.com/aragon/AGPs/pull/126/files" target="_blank">5 council members</a>. It is planned for <a href="https://blog.aragon.org/evolving-aragon-network-governance/" target="_blank">control to be transitioned to ANT holders</a>.
+		 Only the Aragon Network DAO can change them, through a vote. Currently the Aragon Network DAO is composed of 
+		<a href="https://blog.aragon.one/aragon-network-deploy/#governor-council" target="_blank">five council members</a>. It is planned for <a href="https://blog.aragon.org/evolving-aragon-network-governance/" target="_blank">control to be transitioned to ANT holders</a>.
 	</p>
 	</li>
 	<li>Do parameter changes affect ongoing disputes?
