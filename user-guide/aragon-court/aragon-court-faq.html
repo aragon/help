@@ -13,8 +13,8 @@
 	</ul>
 	</li>
 	<li>What is the current configuration of Aragon Court's parameters?<br>
-	 You can find Aragon Court's current parameters on the backend monitoring dashboard 
-	<a href="https://court-backend-app.eth.aragon.network/" target="_blank">here</a>.</li>
+	 You can find Aragon Court's current parameters, including the values for modifiable parameters such as 
+	<code>Juror_Fee</code>, <code>Draft_Fee</code>, and <code>Settle_Fee</code>, on the backend monitoring dashboard <a href="https://court-backend-app.eth.aragon.network/" target="_blank">here</a>.</li>
 </ul>
 <h4 id="disputes"><a href="#disputes">Disputes</a></h4>
 <ul>
@@ -23,14 +23,22 @@
 		 The fees required to create a dispute are:
 	</p>
 	<ul>
-		<li>Juror fees: 10 DAI x 3 jurors in first round = 30 DAI</li>
-		<li>Draft fees: 0.18 DAI x 3 jurors = 0.54 DAI. These are intended to cover transaction fees for drafting.</li>
-		<li>Settlement fees: 0.11 DAI x 3 jurors = 0.33 DAI. These are intended to cover transaction fees for settling penalties.</li>
+		<li>Juror fees: <code>(Juror_Fee) x 3</code>
+		<ul>
+			<li>It is multiplied by three because three jurors are drafted in the first dispute round.</li>
+		</ul>
+		</li>
+		<li>Draft fees: <code>(Draft_Fee) x 3</code>
+		<ul>
+			<li>These are intended to cover transaction fees for drafting.</li>
+		</ul>
+		</li>
+		<li>Settlement fees: <code>(Settle_Fee) x 3</code>
+		<ul>
+			<li>These are intended to cover transaction fees for settling penalties.</li>
+		</ul>
+		</li>
 	</ul>
-	<p>
-		 Total: 
-		<strong>30.87 DAI</strong>
-	</p>
 	</li>
 	<li>Do I need to put collateral to create a dispute?
 	<p>
@@ -43,90 +51,66 @@
 	<li>How much money is needed to appeal a dispute? And to confirm the appeal? What is it for?
 	<p>
 		 To appeal a dispute or confirm it, the amount required is 
-		<code>(juror fees + draft fees + settlement fees) x collateral factor x number of jurors</code>.
+		<code>(Juror_Fee + Draft_Fee + Settle_Fee) x collateral factor x number of jurors</code>.
 	</p>
 	<ul>
-		<li>Juror fees = 10 DAI</li>
-		<li>Draft fees = 0.18 DAI</li>
-		<li>Settlement fees = 0.11 DAI</li>
+		<li>Juror fees = <code>Juror_Fee</code></li>
+		<li>Draft fees = <code>Draft_Fee</code></li>
+		<li>Settlement fees = <code>Settle_Fee</code></li>
 		<li>Collateral factor = 3 to appeal, 2 to confirm</li>
 	</ul>
 	<p>
 		 So that means:
 	</p>
 	<ul>
-		<li>Appeal dispute:&nbsp;30.87 DAI x number of jurors</li>
-		<li>Confirm appeal: 20.58 DAI x number of jurors</li>
+		<li>Appeal dispute: <code>((Juror_Fee + Draft_Fee + Settle_Fee) x 3) x number of jurors</code></li>
+		<li>Confirm appeal: <code>((Juror_Fee + Draft_Fee + Settle_Fee) x 2) x number of jurors</code></li>
 	</ul>
 	<table>
 	<tbody>
 	<tr>
 		<td>
-			<strong>Round</strong>
+			<strong>Appeal number</strong>
 		</td>
 		<td>
-			<strong>Number of jurors</strong><br>
-		</td>
-		<td>
-			<strong>Appeal cost</strong>
-		</td>
-		<td>
-			<strong>Confirm cost</strong><br>
+			<strong>Number of jurors drafted</strong><br>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			 First to second round
+			 First appeal
 		</td>
 		<td>
 			 9
 		</td>
-		<td>
-			 277.83
-		</td>
-		<td>
-			&nbsp; 185.22
-		</td>
 	</tr>
 	<tr>
 		<td>
-			 Second to third round 
+			 Second appeal&nbsp;
 			<br>
 		</td>
 		<td>
 			 27
 		</td>
-		<td>
-			&nbsp; 833.49
-		</td>
-		<td>
-			 555.66
-		</td>
 	</tr>
 	<tr>
 		<td>
-			 Third to fourth round 
+			 Third appeal&nbsp;
 			<br>
 		</td>
 		<td>
 			 81
 		</td>
-		<td>
-			&nbsp; 2500.47
-		</td>
-		<td>
-			 1666.98
-		</td>
 	</tr>
 	</tbody>
 	</table>
 	<p>
-		<a href="https://www.notion.so/bcd12d7cdec24591bd952fce2ed9e2a9"></a>For the final round, the same formulas apply, but there's a reduction of 50%. The number of jurors for the final round is computed as <code>total active stake / min active balance</code>. Min active balance is currently <code>10,000</code> ANJ.
+		<a href="https://www.notion.so/bcd12d7cdec24591bd952fce2ed9e2a9"></a>For the final round, the same formulas apply, but costs are reduced by 50%. The number of jurors for the final round is computed as <code>total active stake / min active balance</code>.
 	</p>
 	</li>
 	<li>If I have ANJ tokens staked or activated, can I lose them if I appeal a dispute?
 	<p>
-		 No, the only funds that are risk when appealing or confirming an appeal are the DAI tokens deposited as collateral (see previous question for more details).
+		 No, the only funds that are at risk when appealing or confirming an appeal are the DAI tokens deposited as collateral (see previous question for more details).
 	</p>
 	</li>
 	<li>What happens to the collateral put up if the final ruling is neither the ruling proposed by the appealing party nor the confirming party?
@@ -134,9 +118,9 @@
 		 A portion of the collateral is used to pay fees, and the rest is returned to the collateral's previous owner. The fees are used to pay the winning jurors and pay for the incentivized operations of drafting and settling penalties. The fees paid are, per juror:
 	</p>
 	<ul>
-		<li>Juror fees = 10 DAI</li>
-		<li>Draft fees = 0.18 DAI</li>
-		<li>Settlement fees = 0.11 DAI</li>
+		<li><code>Juror_Fee</code></li>
+		<li><code>Draft_Fee</code></li>
+		<li><code>Settle_Fee</code></li>
 	</ul>
 	</li>
 </ul>
@@ -149,12 +133,10 @@
 	</p>
 	</li>
 	<li>What happens if there is a tie? <br>
-	 In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Block &gt; Allow, if in the second round 1 juror refuses to vote, 4 vote Block and 4 vote Allow, the final outcome (for that round) will be Block. If there are no appeals in that round then Block is the final ruling and the 4 jurors that voted Block will be rewarded and the rest will be slashed. 
+	 In case of a tie the highest priority option will be chosen. Refuse to vote will always be the highest priority. On top of that, organizations subscribed to the Court can set up their own priority. Everything else works the same. So, for instance, given a priority of Block &gt; Allow, if in the second round 1 juror refuses to vote, 4 vote Block and 4 vote Allow, the final outcome (for that round) will be Block. If there are no appeals in that round then Block is the final ruling and the 4 jurors that voted Block will be rewarded and the rest will be slashed.
 	</li>
-	<li>What does "Refuse to vote" mean? What happens if it's the most voted option?
-	<p>
-		 This is an option jurors can chose if they think that the arguments are not complete or coherent enough to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
-	</p>
+	<li>What does "Refuse to vote" mean? What happens if it's the most voted option?<br>
+	This is an option jurors can chose if they think that the arguments are not complete or coherent enough to make a decision or they think that the dispute doesn't belong in the Court (in the future there may be different specialized Courts). "Refuse to vote" works like any other option: if it's the most voted option, jurors who voted for it get rewards, all the rest get slashed.
 	</li>
 	<li>Another juror tried to collude and leaked his secret password. Can I punish this juror for attempting to collude?<br>
 	<p>
@@ -175,7 +157,7 @@
 	<a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror#bonding-curve" target="_blank">ANJ bonding curve</a>. At any given time it is possible that the price of ANJ will be lower or higher than the price at which you acquired the ANJ.</li>
 	<li>What is the current total supply of ANJ? And what is the max supply?<br>
 	 The current total supply can be found on the ANJ contract page on block explorers such as 
-	<a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184" target="_blank">Etherscan</a>. Due to the <a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror#bonding-curve" target="_blank">bonding curve relationship</a> between ANT and ANJ, the max supply of ANJ is determined by the current total supply of ANT; based on the <a href="https://wiki.aragon.org/network/aragon_network_token/#initial-supply-breakdown" target="_blank">current total supply of ANT</a>, the max supply of ANJ that could possibly be minted by locking ANT in the bonding curve is approximately 350,868,849 ANJ.</li>
+	<a href="https://etherscan.io/token/0xcD62b1C403fa761BAadFC74C525ce2B51780b184" target="_blank">Etherscan</a>. Due to the <a href="https://help.aragon.org/article/44-how-to-get-anj-and-become-an-aragon-court-juror#bonding-curve" target="_blank">bonding curve relationship</a> between ANT and ANJ, the max supply of ANJ is determined by the current total supply of ANT; based on the <a href="https://wiki.aragon.org/network/aragon_network_token/#initial-supply-breakdown" target="_blank">current total supply of ANT</a>, the max supply of ANJ that could possibly be minted by locking ANT in the bonding curve is approximately 388,242,533&nbsp;ANJ.</li>
 	<li>Where can I find more information about ANJ?<br>
 	 You can find more information about ANJ on the 
 	<a href="https://wiki.aragon.org/network/aragon_network_juror/" target="_blank">Aragon Network Juror page</a> of the Aragon Wiki.</li>
